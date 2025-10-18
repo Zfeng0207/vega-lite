@@ -1,0 +1,198 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "width": 800,
+    "height": 500,
+    "padding": {"left": 5, "right": 200, "top": 5, "bottom": 5},
+    "autosize": "none",
+    "title": {
+      "text": "Malaysia Unemployment Rate by State (2019–2022)",
+      "fontSize": 16,
+      "anchor": "start"
+    },
+    "signals": [
+      {
+        "name": "year_select",
+        "value": 2022,
+        "bind": {
+          "input": "select",
+          "options": [2019, 2020, 2021, 2022],
+          "name": "Select Year: "
+        }
+      }
+    ],
+    "data": [
+      {
+        "name": "lf_raw",
+        "url": "https://raw.githubusercontent.com/Zfeng0207/VegaLite/refs/heads/main/labour_workforce_by_state_2019_2022.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "date": "date",
+            "lf": "number",
+            "lf_employed": "number",
+            "lf_unemployed": "number",
+            "lf_outside": "number",
+            "p_rate": "number",
+            "u_rate": "number",
+            "lat": "number",
+            "long": "number"
+          }
+        }
+      },
+      {
+        "name": "lf_year",
+        "source": "lf_raw",
+        "transform": [
+          {"type": "formula", "expr": "year(datum.date)", "as": "year"},
+          {
+            "type": "filter",
+            "expr": "datum.year == year_select && datum.state != 'W.P. Kuala Lumpur' && datum.state != 'W.P. Labuan' && datum.state != 'Putrajaya'"
+          }
+        ]
+      },
+      {
+        "name": "lf_year_avg",
+        "source": "lf_year",
+        "transform": [
+          {
+            "type": "aggregate",
+            "groupby": ["state"],
+            "ops": ["mean", "mean", "mean"],
+            "fields": ["u_rate", "lat", "long"],
+            "as": ["u_rate_mean", "lat", "long"]
+          }
+        ]
+      },
+      {
+        "name": "states_geo",
+        "url": "https://raw.githubusercontent.com/Zfeng0207/VegaLite/refs/heads/main/ne_10m_admin_1_states_provinces.json",
+        "format": {"type": "topojson", "feature": "states"}
+      },
+      {
+        "name": "states_with_data",
+        "source": "states_geo",
+        "transform": [
+          {
+            "type": "formula",
+            "expr": "datum.properties.Name == 'Penang' ? 'Pulau Pinang' : datum.properties.Name",
+            "as": "state_name"
+          },
+          {
+            "type": "filter",
+            "expr": "datum.state_name != 'W.P. Labuan' && datum.state_name != 'W.P. Kuala Lumpur' && datum.state_name != 'Putrajaya'"
+          },
+          {
+            "type": "lookup",
+            "from": "lf_year_avg",
+            "key": "state",
+            "fields": ["state_name"],
+            "values": ["u_rate_mean"],
+            "as": ["u_rate_mean"]
+          }
+        ]
+      },
+      {
+        "name": "graticule",
+        "transform": [
+          {"type": "graticule", "extent": [[95, -5], [118, 8]], "step": [2, 2]}
+        ]
+      },
+      {
+        "name": "lf_year_labels",
+        "source": "lf_year_avg",
+        "transform": [
+          {
+            "type": "filter",
+            "expr": "datum.state != 'W.P. Kuala Lumpur' && datum.state != 'W.P. Labuan' && datum.state != 'Putrajaya'"
+          },
+          {"type": "geopoint", "projection": "projection", "fields": ["long", "lat"], "as": ["x", "y"]},
+          {"type": "formula", "expr": "format(datum.u_rate_mean, '.1f') + '%'", "as": "label"}
+        ]
+      }
+    ],
+    "projections": [
+      {
+        "name": "projection",
+        "type": "mercator",
+        "center": [108, 4],
+        "scale": 2700,
+        "translate": [400, 250]
+      }
+    ],
+    "scales": [
+      {
+        "name": "color",
+        "type": "linear",
+        "domain": [2, 8],
+        "range": ["#1a9850", "#ffffbf", "#d73027"],   
+        "clamp": true
+      }
+    ],
+    "legends": [
+      {
+        "fill": "color",
+        "type": "gradient",
+        "title": "Unemployment Rate (%)",
+        "orient": "right",
+        "direction": "vertical",
+        "gradientLength": 200,
+        "gradientThickness": 16,
+        "format": ".1f",
+        "titleFontSize": 12,
+        "labelFontSize": 11,
+        "titleLimit": 300
+      }
+    ],
+    "marks": [
+      {
+        "type": "shape",
+        "from": {"data": "graticule"},
+        "encode": {
+          "update": {
+            "strokeWidth": {"value": 0.8},
+            "stroke": {"value": "#e6e6e6"},
+            "fill": {"value": null}
+          }
+        },
+        "transform": [{"type": "geoshape", "projection": "projection"}]
+      },
+      {
+        "type": "shape",
+        "from": {"data": "states_with_data"},
+        "encode": {
+          "update": {
+            "strokeWidth": {"value": 0.5},
+            "stroke": {"value": "white"},
+            "fill": [
+              {"test": "datum.u_rate_mean != null", "scale": "color", "field": "u_rate_mean"},
+              {"value": "#ddd"}
+            ],
+            "tooltip": {
+              "signal": "{'State': datum.properties.Name, 'Yearly Mean Unemployment Rate (%)': format(datum.u_rate_mean, '.1f')}"
+            }
+          }
+        },
+        "transform": [{"type": "geoshape", "projection": "projection"}]
+      },
+      {
+        "type": "text",
+        "from": {"data": "lf_year_labels"},
+        "encode": {
+          "update": {
+            "x": {"field": "x"},
+            "y": {"field": "y"},
+            "text": {"field": "label"},
+            "align": {"value": "center"},
+            "baseline": {"value": "middle"},
+            "fontSize": {"value": 14},
+            "fontWeight": {"value": "bold"},
+            "fill": {"value": "#222"},
+            "stroke": {"value": "black"},
+            "strokeWidth": {"value": 0.5}
+          }
+        }
+      }
+    ],
+    "config": {"view": {"stroke": null}}
+  }
+  
