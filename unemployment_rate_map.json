@@ -5,25 +5,39 @@
     "padding": {"left": 5, "right": 200, "top": 5, "bottom": 5},
     "autosize": "none",
     "title": {
-      "text": "Malaysia Unemployment Rate by State (2019–2022)",
+      "text": "Malaysia Labour Force Participation Rate by State (2019–2022)",
       "fontSize": 16,
       "anchor": "start"
     },
+  
     "signals": [
       {
         "name": "year_select",
         "value": 2022,
         "bind": {
-          "input": "select",
-          "options": [2019, 2020, 2021, 2022],
+          "input": "range",
+          "min": 2019,
+          "max": 2022,
+          "step": 1,
           "name": "Select Year: "
+        }
+      },
+      {
+        "name": "sex_select",
+        "value": "both",
+        "bind": {
+          "input": "select",
+          "options": ["both", "male", "female"],
+          "labels": ["Both Sexes", "Male", "Female"],
+          "name": "Select Sex: "
         }
       }
     ],
+  
     "data": [
       {
         "name": "lf_raw",
-        "url": "https://raw.githubusercontent.com/Zfeng0207/VegaLite/refs/heads/main/labour_workforce_by_state_2019_2022.csv",
+        "url": "https://raw.githubusercontent.com/Zfeng0207/VegaLite/refs/heads/main/lfs_state_sex.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -34,8 +48,7 @@
             "lf_outside": "number",
             "p_rate": "number",
             "u_rate": "number",
-            "lat": "number",
-            "long": "number"
+            "ep_ratio": "number"
           }
         }
       },
@@ -46,20 +59,7 @@
           {"type": "formula", "expr": "year(datum.date)", "as": "year"},
           {
             "type": "filter",
-            "expr": "datum.year == year_select && datum.state != 'W.P. Kuala Lumpur' && datum.state != 'W.P. Labuan' && datum.state != 'Putrajaya'"
-          }
-        ]
-      },
-      {
-        "name": "lf_year_avg",
-        "source": "lf_year",
-        "transform": [
-          {
-            "type": "aggregate",
-            "groupby": ["state"],
-            "ops": ["mean", "mean", "mean"],
-            "fields": ["u_rate", "lat", "long"],
-            "as": ["u_rate_mean", "lat", "long"]
+            "expr": "datum.year == year_select && datum.sex == sex_select && datum.state != 'W.P. Kuala Lumpur' && datum.state != 'W.P. Labuan'"
           }
         ]
       },
@@ -79,15 +79,15 @@
           },
           {
             "type": "filter",
-            "expr": "datum.state_name != 'W.P. Labuan' && datum.state_name != 'W.P. Kuala Lumpur' && datum.state_name != 'Putrajaya'"
+            "expr": "datum.state_name != 'W.P. Kuala Lumpur' && datum.state_name != 'W.P. Labuan'"
           },
           {
             "type": "lookup",
-            "from": "lf_year_avg",
+            "from": "lf_year",
             "key": "state",
             "fields": ["state_name"],
-            "values": ["u_rate_mean"],
-            "as": ["u_rate_mean"]
+            "values": ["p_rate", "year", "sex"],
+            "as": ["p_rate", "year", "sex"]
           }
         ]
       },
@@ -96,20 +96,9 @@
         "transform": [
           {"type": "graticule", "extent": [[95, -5], [118, 8]], "step": [2, 2]}
         ]
-      },
-      {
-        "name": "lf_year_labels",
-        "source": "lf_year_avg",
-        "transform": [
-          {
-            "type": "filter",
-            "expr": "datum.state != 'W.P. Kuala Lumpur' && datum.state != 'W.P. Labuan' && datum.state != 'Putrajaya'"
-          },
-          {"type": "geopoint", "projection": "projection", "fields": ["long", "lat"], "as": ["x", "y"]},
-          {"type": "formula", "expr": "format(datum.u_rate_mean, '.1f') + '%'", "as": "label"}
-        ]
       }
     ],
+  
     "projections": [
       {
         "name": "projection",
@@ -119,20 +108,22 @@
         "translate": [400, 250]
       }
     ],
+  
     "scales": [
       {
         "name": "color",
         "type": "linear",
-        "domain": [2, 8],
-        "range": ["#1a9850", "#ffffbf", "#d73027"],   
+        "domain": [50, 80],
+        "range": ["#d73027", "#ffffbf", "#1a9850"],
         "clamp": true
       }
     ],
+  
     "legends": [
       {
         "fill": "color",
         "type": "gradient",
-        "title": "Unemployment Rate (%)",
+        "title": "Participation Rate (%)",
         "orient": "right",
         "direction": "vertical",
         "gradientLength": 200,
@@ -143,6 +134,7 @@
         "titleLimit": 300
       }
     ],
+  
     "marks": [
       {
         "type": "shape",
@@ -164,11 +156,11 @@
             "strokeWidth": {"value": 0.5},
             "stroke": {"value": "white"},
             "fill": [
-              {"test": "datum.u_rate_mean != null", "scale": "color", "field": "u_rate_mean"},
+              {"test": "datum.p_rate != null", "scale": "color", "field": "p_rate"},
               {"value": "#ddd"}
             ],
             "tooltip": {
-              "signal": "{'State': datum.properties.Name, 'Yearly Mean Unemployment Rate (%)': format(datum.u_rate_mean, '.1f')}"
+              "signal": "{'State': datum.properties.Name, 'Year': year_select, 'Sex': sex_select, 'Participation Rate (%)': format(datum.p_rate, '.1f')}"
             }
           }
         },
@@ -176,15 +168,15 @@
       },
       {
         "type": "text",
-        "from": {"data": "lf_year_labels"},
+        "from": {"data": "states_with_data"},
         "encode": {
           "update": {
-            "x": {"field": "x"},
-            "y": {"field": "y"},
-            "text": {"field": "label"},
+            "x": {"signal": "geoCentroid('projection', datum)[0]"},
+            "y": {"signal": "geoCentroid('projection', datum)[1]"},
+            "text": {"signal": "isValid(datum.p_rate) ? format(datum.p_rate, '.1f') + '%' : ''"},
             "align": {"value": "center"},
             "baseline": {"value": "middle"},
-            "fontSize": {"value": 14},
+            "fontSize": {"value": 10},
             "fontWeight": {"value": "bold"},
             "fill": {"value": "#222"},
             "stroke": {"value": "black"},
@@ -193,6 +185,7 @@
         }
       }
     ],
+  
     "config": {"view": {"stroke": null}}
   }
   

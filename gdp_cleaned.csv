@@ -1,0 +1,937 @@
+base year,year,state,kind of economic activity,sub kind of economic activity,value rm million,status data
+2015,2019,Johor,Agriculture,Agriculture,16403,f
+2015,2020,Johor,Agriculture,Agriculture,16857,f
+2015,2021,Johor,Agriculture,Agriculture,16980,e
+2015,2022,Johor,Agriculture,Agriculture,17304,p
+2015,2019,Johor,Mining and quarrying,Mining and quarrying,813,f
+2015,2020,Johor,Mining and quarrying,Mining and quarrying,658,f
+2015,2021,Johor,Mining and quarrying,Mining and quarrying,587,e
+2015,2022,Johor,Mining and quarrying,Mining and quarrying,631,p
+2015,2019,Johor,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",5445,f
+2015,2020,Johor,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",5443,f
+2015,2021,Johor,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",5307,e
+2015,2022,Johor,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",5557,p
+2015,2019,Johor,Manufacturing,"Textiles, wearing apparel and leather products",1824,f
+2015,2020,Johor,Manufacturing,"Textiles, wearing apparel and leather products",1599,f
+2015,2021,Johor,Manufacturing,"Textiles, wearing apparel and leather products",1707,e
+2015,2022,Johor,Manufacturing,"Textiles, wearing apparel and leather products",1791,p
+2015,2019,Johor,Manufacturing,"Wood products, furniture, paper products and printing",4582,f
+2015,2020,Johor,Manufacturing,"Wood products, furniture, paper products and printing",4411,f
+2015,2021,Johor,Manufacturing,"Wood products, furniture, paper products and printing",4681,e
+2015,2022,Johor,Manufacturing,"Wood products, furniture, paper products and printing",5142,p
+2015,2019,Johor,Manufacturing,"Petroleum, chemical, rubber and plastic products",7930,f
+2015,2020,Johor,Manufacturing,"Petroleum, chemical, rubber and plastic products",8217,f
+2015,2021,Johor,Manufacturing,"Petroleum, chemical, rubber and plastic products",8957,e
+2015,2022,Johor,Manufacturing,"Petroleum, chemical, rubber and plastic products",9035,p
+2015,2019,Johor,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",5875,f
+2015,2020,Johor,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",5044,f
+2015,2021,Johor,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",5110,e
+2015,2022,Johor,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",5353,p
+2015,2019,Johor,Manufacturing,"Electrical, electronic and optical products",12901,f
+2015,2020,Johor,Manufacturing,"Electrical, electronic and optical products",12509,f
+2015,2021,Johor,Manufacturing,"Electrical, electronic and optical products",13386,e
+2015,2022,Johor,Manufacturing,"Electrical, electronic and optical products",14397,p
+2015,2019,Johor,Manufacturing,"Transport equipment, other manufacturing and repair",1568,f
+2015,2020,Johor,Manufacturing,"Transport equipment, other manufacturing and repair",1426,f
+2015,2021,Johor,Manufacturing,"Transport equipment, other manufacturing and repair",1579,e
+2015,2022,Johor,Manufacturing,"Transport equipment, other manufacturing and repair",1674,p
+2015,2019,Johor,Construction,Residential and non-residential,2667,f
+2015,2020,Johor,Construction,Residential and non-residential,2021,f
+2015,2021,Johor,Construction,Residential and non-residential,1507,e
+2015,2022,Johor,Construction,Residential and non-residential,1715,p
+2015,2019,Johor,Construction,Civil engineering,3502,f
+2015,2020,Johor,Construction,Civil engineering,1650,f
+2015,2021,Johor,Construction,Civil engineering,1265,e
+2015,2022,Johor,Construction,Civil engineering,1501,p
+2015,2019,Johor,Construction,Special trade,531,f
+2015,2020,Johor,Construction,Special trade,504,f
+2015,2021,Johor,Construction,Special trade,651,e
+2015,2022,Johor,Construction,Special trade,751,p
+2015,2019,Johor,Services,"Utilities, transportation & storage and information & communication",17260,f
+2015,2020,Johor,Services,"Utilities, transportation & storage and information & communication",17116,f
+2015,2021,Johor,Services,"Utilities, transportation & storage and information & communication",18279,e
+2015,2022,Johor,Services,"Utilities, transportation & storage and information & communication",19991,p
+2015,2019,Johor,Services,"Wholesale and retail trade, food & beverage and accommodation",20212,f
+2015,2020,Johor,Services,"Wholesale and retail trade, food & beverage and accommodation",18394,f
+2015,2021,Johor,Services,"Wholesale and retail trade, food & beverage and accommodation",18233,e
+2015,2022,Johor,Services,"Wholesale and retail trade, food & beverage and accommodation",21827,p
+2015,2019,Johor,Services,"Finance and insurance, real estate and business services",13457,f
+2015,2020,Johor,Services,"Finance and insurance, real estate and business services",12985,f
+2015,2021,Johor,Services,"Finance and insurance, real estate and business services",13301,e
+2015,2022,Johor,Services,"Finance and insurance, real estate and business services",14318,p
+2015,2019,Johor,Services,Other services,6972,f
+2015,2020,Johor,Services,Other services,6691,f
+2015,2021,Johor,Services,Other services,6625,e
+2015,2022,Johor,Services,Other services,7046,p
+2015,2019,Johor,Services,Government services,10676,f
+2015,2020,Johor,Services,Government services,11220,f
+2015,2021,Johor,Services,Government services,11878,e
+2015,2022,Johor,Services,Government services,12491,p
+2015,2019,Johor,Plus: Import duties,Plus: Import duties,1609,f
+2015,2020,Johor,Plus: Import duties,Plus: Import duties,1327,f
+2015,2021,Johor,Plus: Import duties,Plus: Import duties,1269,e
+2015,2022,Johor,Plus: Import duties,Plus: Import duties,1533,p
+2015,2019,Kedah,Agriculture,Agriculture,5646,f
+2015,2020,Kedah,Agriculture,Agriculture,5518,f
+2015,2021,Kedah,Agriculture,Agriculture,5667,e
+2015,2022,Kedah,Agriculture,Agriculture,5614,p
+2015,2019,Kedah,Mining and quarrying,Mining and quarrying,125,f
+2015,2020,Kedah,Mining and quarrying,Mining and quarrying,112,f
+2015,2021,Kedah,Mining and quarrying,Mining and quarrying,103,e
+2015,2022,Kedah,Mining and quarrying,Mining and quarrying,111,p
+2015,2019,Kedah,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",998,f
+2015,2020,Kedah,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1066,f
+2015,2021,Kedah,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1097,e
+2015,2022,Kedah,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1127,p
+2015,2019,Kedah,Manufacturing,"Textiles, wearing apparel and leather products",110,f
+2015,2020,Kedah,Manufacturing,"Textiles, wearing apparel and leather products",106,f
+2015,2021,Kedah,Manufacturing,"Textiles, wearing apparel and leather products",96,e
+2015,2022,Kedah,Manufacturing,"Textiles, wearing apparel and leather products",96,p
+2015,2019,Kedah,Manufacturing,"Wood products, furniture, paper products and printing",669,f
+2015,2020,Kedah,Manufacturing,"Wood products, furniture, paper products and printing",652,f
+2015,2021,Kedah,Manufacturing,"Wood products, furniture, paper products and printing",763,e
+2015,2022,Kedah,Manufacturing,"Wood products, furniture, paper products and printing",874,p
+2015,2019,Kedah,Manufacturing,"Petroleum, chemical, rubber and plastic products",2651,f
+2015,2020,Kedah,Manufacturing,"Petroleum, chemical, rubber and plastic products",2948,f
+2015,2021,Kedah,Manufacturing,"Petroleum, chemical, rubber and plastic products",2836,e
+2015,2022,Kedah,Manufacturing,"Petroleum, chemical, rubber and plastic products",2808,p
+2015,2019,Kedah,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",1999,f
+2015,2020,Kedah,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",1761,f
+2015,2021,Kedah,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",1835,e
+2015,2022,Kedah,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",1879,p
+2015,2019,Kedah,Manufacturing,"Electrical, electronic and optical products",6346,f
+2015,2020,Kedah,Manufacturing,"Electrical, electronic and optical products",6473,f
+2015,2021,Kedah,Manufacturing,"Electrical, electronic and optical products",7160,e
+2015,2022,Kedah,Manufacturing,"Electrical, electronic and optical products",8117,p
+2015,2019,Kedah,Manufacturing,"Transport equipment, other manufacturing and repair",657,f
+2015,2020,Kedah,Manufacturing,"Transport equipment, other manufacturing and repair",612,f
+2015,2021,Kedah,Manufacturing,"Transport equipment, other manufacturing and repair",678,e
+2015,2022,Kedah,Manufacturing,"Transport equipment, other manufacturing and repair",732,p
+2015,2019,Kedah,Construction,Residential and non-residential,628,f
+2015,2020,Kedah,Construction,Residential and non-residential,589,f
+2015,2021,Kedah,Construction,Residential and non-residential,484,e
+2015,2022,Kedah,Construction,Residential and non-residential,600,p
+2015,2019,Kedah,Construction,Civil engineering,106,f
+2015,2020,Kedah,Construction,Civil engineering,120,f
+2015,2021,Kedah,Construction,Civil engineering,131,e
+2015,2022,Kedah,Construction,Civil engineering,157,p
+2015,2019,Kedah,Construction,Special trade,356,f
+2015,2020,Kedah,Construction,Special trade,404,f
+2015,2021,Kedah,Construction,Special trade,404,e
+2015,2022,Kedah,Construction,Special trade,449,p
+2015,2019,Kedah,Services,"Utilities, transportation & storage and information & communication",4505,f
+2015,2020,Kedah,Services,"Utilities, transportation & storage and information & communication",4357,f
+2015,2021,Kedah,Services,"Utilities, transportation & storage and information & communication",4610,e
+2015,2022,Kedah,Services,"Utilities, transportation & storage and information & communication",4994,p
+2015,2019,Kedah,Services,"Wholesale and retail trade, food & beverage and accommodation",8370,f
+2015,2020,Kedah,Services,"Wholesale and retail trade, food & beverage and accommodation",7567,f
+2015,2021,Kedah,Services,"Wholesale and retail trade, food & beverage and accommodation",7403,e
+2015,2022,Kedah,Services,"Wholesale and retail trade, food & beverage and accommodation",8517,p
+2015,2019,Kedah,Services,"Finance and insurance, real estate and business services",3627,f
+2015,2020,Kedah,Services,"Finance and insurance, real estate and business services",3516,f
+2015,2021,Kedah,Services,"Finance and insurance, real estate and business services",3632,e
+2015,2022,Kedah,Services,"Finance and insurance, real estate and business services",3836,p
+2015,2019,Kedah,Services,Other services,3322,f
+2015,2020,Kedah,Services,Other services,3222,f
+2015,2021,Kedah,Services,Other services,3240,e
+2015,2022,Kedah,Services,Other services,3394,p
+2015,2019,Kedah,Services,Government services,6503,f
+2015,2020,Kedah,Services,Government services,6773,f
+2015,2021,Kedah,Services,Government services,7047,e
+2015,2022,Kedah,Services,Government services,7283,p
+2015,2019,Kedah,Plus: Import duties,Plus: Import duties,224,f
+2015,2020,Kedah,Plus: Import duties,Plus: Import duties,248,f
+2015,2021,Kedah,Plus: Import duties,Plus: Import duties,324,e
+2015,2022,Kedah,Plus: Import duties,Plus: Import duties,349,p
+2015,2019,Kelantan,Agriculture,Agriculture,5814,f
+2015,2020,Kelantan,Agriculture,Agriculture,5818,f
+2015,2021,Kelantan,Agriculture,Agriculture,5888,e
+2015,2022,Kelantan,Agriculture,Agriculture,5601,p
+2015,2019,Kelantan,Mining and quarrying,Mining and quarrying,417,f
+2015,2020,Kelantan,Mining and quarrying,Mining and quarrying,342,f
+2015,2021,Kelantan,Mining and quarrying,Mining and quarrying,353,e
+2015,2022,Kelantan,Mining and quarrying,Mining and quarrying,382,p
+2015,2019,Kelantan,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",224,f
+2015,2020,Kelantan,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",225,f
+2015,2021,Kelantan,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",200,e
+2015,2022,Kelantan,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",202,p
+2015,2019,Kelantan,Manufacturing,"Textiles, wearing apparel and leather products",113,f
+2015,2020,Kelantan,Manufacturing,"Textiles, wearing apparel and leather products",90,f
+2015,2021,Kelantan,Manufacturing,"Textiles, wearing apparel and leather products",79,e
+2015,2022,Kelantan,Manufacturing,"Textiles, wearing apparel and leather products",80,p
+2015,2019,Kelantan,Manufacturing,"Wood products, furniture, paper products and printing",215,f
+2015,2020,Kelantan,Manufacturing,"Wood products, furniture, paper products and printing",173,f
+2015,2021,Kelantan,Manufacturing,"Wood products, furniture, paper products and printing",201,e
+2015,2022,Kelantan,Manufacturing,"Wood products, furniture, paper products and printing",213,p
+2015,2019,Kelantan,Manufacturing,"Petroleum, chemical, rubber and plastic products",240,f
+2015,2020,Kelantan,Manufacturing,"Petroleum, chemical, rubber and plastic products",258,f
+2015,2021,Kelantan,Manufacturing,"Petroleum, chemical, rubber and plastic products",260,e
+2015,2022,Kelantan,Manufacturing,"Petroleum, chemical, rubber and plastic products",259,p
+2015,2019,Kelantan,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",185,f
+2015,2020,Kelantan,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",166,f
+2015,2021,Kelantan,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",176,e
+2015,2022,Kelantan,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",180,p
+2015,2019,Kelantan,Manufacturing,"Electrical, electronic and optical products",295,f
+2015,2020,Kelantan,Manufacturing,"Electrical, electronic and optical products",294,f
+2015,2021,Kelantan,Manufacturing,"Electrical, electronic and optical products",314,e
+2015,2022,Kelantan,Manufacturing,"Electrical, electronic and optical products",334,p
+2015,2019,Kelantan,Manufacturing,"Transport equipment, other manufacturing and repair",29,f
+2015,2020,Kelantan,Manufacturing,"Transport equipment, other manufacturing and repair",28,f
+2015,2021,Kelantan,Manufacturing,"Transport equipment, other manufacturing and repair",30,e
+2015,2022,Kelantan,Manufacturing,"Transport equipment, other manufacturing and repair",30,p
+2015,2019,Kelantan,Construction,Residential and non-residential,216,f
+2015,2020,Kelantan,Construction,Residential and non-residential,202,f
+2015,2021,Kelantan,Construction,Residential and non-residential,191,e
+2015,2022,Kelantan,Construction,Residential and non-residential,200,p
+2015,2019,Kelantan,Construction,Civil engineering,102,f
+2015,2020,Kelantan,Construction,Civil engineering,127,f
+2015,2021,Kelantan,Construction,Civil engineering,146,e
+2015,2022,Kelantan,Construction,Civil engineering,219,p
+2015,2019,Kelantan,Construction,Special trade,65,f
+2015,2020,Kelantan,Construction,Special trade,68,f
+2015,2021,Kelantan,Construction,Special trade,64,e
+2015,2022,Kelantan,Construction,Special trade,61,p
+2015,2019,Kelantan,Services,"Utilities, transportation & storage and information & communication",2308,f
+2015,2020,Kelantan,Services,"Utilities, transportation & storage and information & communication",2345,f
+2015,2021,Kelantan,Services,"Utilities, transportation & storage and information & communication",2476,e
+2015,2022,Kelantan,Services,"Utilities, transportation & storage and information & communication",2647,p
+2015,2019,Kelantan,Services,"Wholesale and retail trade, food & beverage and accommodation",5883,f
+2015,2020,Kelantan,Services,"Wholesale and retail trade, food & beverage and accommodation",5414,f
+2015,2021,Kelantan,Services,"Wholesale and retail trade, food & beverage and accommodation",5373,e
+2015,2022,Kelantan,Services,"Wholesale and retail trade, food & beverage and accommodation",6033,p
+2015,2019,Kelantan,Services,"Finance and insurance, real estate and business services",1393,f
+2015,2020,Kelantan,Services,"Finance and insurance, real estate and business services",1408,f
+2015,2021,Kelantan,Services,"Finance and insurance, real estate and business services",1489,e
+2015,2022,Kelantan,Services,"Finance and insurance, real estate and business services",1564,p
+2015,2019,Kelantan,Services,Other services,1857,f
+2015,2020,Kelantan,Services,Other services,1864,f
+2015,2021,Kelantan,Services,Other services,1894,e
+2015,2022,Kelantan,Services,Other services,1954,p
+2015,2019,Kelantan,Services,Government services,6095,f
+2015,2020,Kelantan,Services,Government services,6343,f
+2015,2021,Kelantan,Services,Government services,6630,e
+2015,2022,Kelantan,Services,Government services,6887,p
+2015,2019,Kelantan,Plus: Import duties,Plus: Import duties,30,f
+2015,2020,Kelantan,Plus: Import duties,Plus: Import duties,24,f
+2015,2021,Kelantan,Plus: Import duties,Plus: Import duties,33,e
+2015,2022,Kelantan,Plus: Import duties,Plus: Import duties,45,p
+2015,2019,Melaka,Agriculture,Agriculture,4433,f
+2015,2020,Melaka,Agriculture,Agriculture,4584,f
+2015,2021,Melaka,Agriculture,Agriculture,4556,e
+2015,2022,Melaka,Agriculture,Agriculture,4526,p
+2015,2019,Melaka,Mining and quarrying,Mining and quarrying,68,f
+2015,2020,Melaka,Mining and quarrying,Mining and quarrying,59,f
+2015,2021,Melaka,Mining and quarrying,Mining and quarrying,55,e
+2015,2022,Melaka,Mining and quarrying,Mining and quarrying,60,p
+2015,2019,Melaka,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",701,f
+2015,2020,Melaka,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",722,f
+2015,2021,Melaka,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",678,e
+2015,2022,Melaka,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",684,p
+2015,2019,Melaka,Manufacturing,"Textiles, wearing apparel and leather products",628,f
+2015,2020,Melaka,Manufacturing,"Textiles, wearing apparel and leather products",532,f
+2015,2021,Melaka,Manufacturing,"Textiles, wearing apparel and leather products",605,e
+2015,2022,Melaka,Manufacturing,"Textiles, wearing apparel and leather products",657,p
+2015,2019,Melaka,Manufacturing,"Wood products, furniture, paper products and printing",448,f
+2015,2020,Melaka,Manufacturing,"Wood products, furniture, paper products and printing",425,f
+2015,2021,Melaka,Manufacturing,"Wood products, furniture, paper products and printing",396,e
+2015,2022,Melaka,Manufacturing,"Wood products, furniture, paper products and printing",417,p
+2015,2019,Melaka,Manufacturing,"Petroleum, chemical, rubber and plastic products",5160,f
+2015,2020,Melaka,Manufacturing,"Petroleum, chemical, rubber and plastic products",4478,f
+2015,2021,Melaka,Manufacturing,"Petroleum, chemical, rubber and plastic products",4779,e
+2015,2022,Melaka,Manufacturing,"Petroleum, chemical, rubber and plastic products",4692,p
+2015,2019,Melaka,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",955,f
+2015,2020,Melaka,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",831,f
+2015,2021,Melaka,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",864,e
+2015,2022,Melaka,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",915,p
+2015,2019,Melaka,Manufacturing,"Electrical, electronic and optical products",4453,f
+2015,2020,Melaka,Manufacturing,"Electrical, electronic and optical products",4394,f
+2015,2021,Melaka,Manufacturing,"Electrical, electronic and optical products",4622,e
+2015,2022,Melaka,Manufacturing,"Electrical, electronic and optical products",4932,p
+2015,2019,Melaka,Manufacturing,"Transport equipment, other manufacturing and repair",4401,f
+2015,2020,Melaka,Manufacturing,"Transport equipment, other manufacturing and repair",3940,f
+2015,2021,Melaka,Manufacturing,"Transport equipment, other manufacturing and repair",3891,e
+2015,2022,Melaka,Manufacturing,"Transport equipment, other manufacturing and repair",4607,p
+2015,2019,Melaka,Construction,Residential and non-residential,583,f
+2015,2020,Melaka,Construction,Residential and non-residential,502,f
+2015,2021,Melaka,Construction,Residential and non-residential,496,e
+2015,2022,Melaka,Construction,Residential and non-residential,524,p
+2015,2019,Melaka,Construction,Civil engineering,601,f
+2015,2020,Melaka,Construction,Civil engineering,306,f
+2015,2021,Melaka,Construction,Civil engineering,222,e
+2015,2022,Melaka,Construction,Civil engineering,244,p
+2015,2019,Melaka,Construction,Special trade,174,f
+2015,2020,Melaka,Construction,Special trade,183,f
+2015,2021,Melaka,Construction,Special trade,179,e
+2015,2022,Melaka,Construction,Special trade,175,p
+2015,2019,Melaka,Services,"Utilities, transportation & storage and information & communication",4107,f
+2015,2020,Melaka,Services,"Utilities, transportation & storage and information & communication",4028,f
+2015,2021,Melaka,Services,"Utilities, transportation & storage and information & communication",4312,e
+2015,2022,Melaka,Services,"Utilities, transportation & storage and information & communication",5076,p
+2015,2019,Melaka,Services,"Wholesale and retail trade, food & beverage and accommodation",8004,f
+2015,2020,Melaka,Services,"Wholesale and retail trade, food & beverage and accommodation",7273,f
+2015,2021,Melaka,Services,"Wholesale and retail trade, food & beverage and accommodation",7298,e
+2015,2022,Melaka,Services,"Wholesale and retail trade, food & beverage and accommodation",8408,p
+2015,2019,Melaka,Services,"Finance and insurance, real estate and business services",2761,f
+2015,2020,Melaka,Services,"Finance and insurance, real estate and business services",2690,f
+2015,2021,Melaka,Services,"Finance and insurance, real estate and business services",2768,e
+2015,2022,Melaka,Services,"Finance and insurance, real estate and business services",2953,p
+2015,2019,Melaka,Services,Other services,2649,f
+2015,2020,Melaka,Services,Other services,2422,f
+2015,2021,Melaka,Services,Other services,2362,e
+2015,2022,Melaka,Services,Other services,2606,p
+2015,2019,Melaka,Services,Government services,3396,f
+2015,2020,Melaka,Services,Government services,3557,f
+2015,2021,Melaka,Services,Government services,3757,e
+2015,2022,Melaka,Services,Government services,3945,p
+2015,2019,Melaka,Plus: Import duties,Plus: Import duties,62,f
+2015,2020,Melaka,Plus: Import duties,Plus: Import duties,104,f
+2015,2021,Melaka,Plus: Import duties,Plus: Import duties,59,e
+2015,2022,Melaka,Plus: Import duties,Plus: Import duties,67,p
+2015,2019,Negeri Sembilan,Agriculture,Agriculture,3557,f
+2015,2020,Negeri Sembilan,Agriculture,Agriculture,3319,f
+2015,2021,Negeri Sembilan,Agriculture,Agriculture,3306,e
+2015,2022,Negeri Sembilan,Agriculture,Agriculture,3287,p
+2015,2019,Negeri Sembilan,Mining and quarrying,Mining and quarrying,236,f
+2015,2020,Negeri Sembilan,Mining and quarrying,Mining and quarrying,200,f
+2015,2021,Negeri Sembilan,Mining and quarrying,Mining and quarrying,186,e
+2015,2022,Negeri Sembilan,Mining and quarrying,Mining and quarrying,201,p
+2015,2019,Negeri Sembilan,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1582,f
+2015,2020,Negeri Sembilan,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1566,f
+2015,2021,Negeri Sembilan,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1474,e
+2015,2022,Negeri Sembilan,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1654,p
+2015,2019,Negeri Sembilan,Manufacturing,"Textiles, wearing apparel and leather products",366,f
+2015,2020,Negeri Sembilan,Manufacturing,"Textiles, wearing apparel and leather products",302,f
+2015,2021,Negeri Sembilan,Manufacturing,"Textiles, wearing apparel and leather products",339,e
+2015,2022,Negeri Sembilan,Manufacturing,"Textiles, wearing apparel and leather products",362,p
+2015,2019,Negeri Sembilan,Manufacturing,"Wood products, furniture, paper products and printing",969,f
+2015,2020,Negeri Sembilan,Manufacturing,"Wood products, furniture, paper products and printing",907,f
+2015,2021,Negeri Sembilan,Manufacturing,"Wood products, furniture, paper products and printing",887,e
+2015,2022,Negeri Sembilan,Manufacturing,"Wood products, furniture, paper products and printing",903,p
+2015,2019,Negeri Sembilan,Manufacturing,"Petroleum, chemical, rubber and plastic products",5697,f
+2015,2020,Negeri Sembilan,Manufacturing,"Petroleum, chemical, rubber and plastic products",5484,f
+2015,2021,Negeri Sembilan,Manufacturing,"Petroleum, chemical, rubber and plastic products",6066,e
+2015,2022,Negeri Sembilan,Manufacturing,"Petroleum, chemical, rubber and plastic products",6404,p
+2015,2019,Negeri Sembilan,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",2083,f
+2015,2020,Negeri Sembilan,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",1810,f
+2015,2021,Negeri Sembilan,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",1862,e
+2015,2022,Negeri Sembilan,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",1924,p
+2015,2019,Negeri Sembilan,Manufacturing,"Electrical, electronic and optical products",6068,f
+2015,2020,Negeri Sembilan,Manufacturing,"Electrical, electronic and optical products",5921,f
+2015,2021,Negeri Sembilan,Manufacturing,"Electrical, electronic and optical products",6498,e
+2015,2022,Negeri Sembilan,Manufacturing,"Electrical, electronic and optical products",7232,p
+2015,2019,Negeri Sembilan,Manufacturing,"Transport equipment, other manufacturing and repair",867,f
+2015,2020,Negeri Sembilan,Manufacturing,"Transport equipment, other manufacturing and repair",770,f
+2015,2021,Negeri Sembilan,Manufacturing,"Transport equipment, other manufacturing and repair",836,e
+2015,2022,Negeri Sembilan,Manufacturing,"Transport equipment, other manufacturing and repair",916,p
+2015,2019,Negeri Sembilan,Construction,Residential and non-residential,718,f
+2015,2020,Negeri Sembilan,Construction,Residential and non-residential,699,f
+2015,2021,Negeri Sembilan,Construction,Residential and non-residential,727,e
+2015,2022,Negeri Sembilan,Construction,Residential and non-residential,814,p
+2015,2019,Negeri Sembilan,Construction,Civil engineering,815,f
+2015,2020,Negeri Sembilan,Construction,Civil engineering,473,f
+2015,2021,Negeri Sembilan,Construction,Civil engineering,407,e
+2015,2022,Negeri Sembilan,Construction,Civil engineering,401,p
+2015,2019,Negeri Sembilan,Construction,Special trade,310,f
+2015,2020,Negeri Sembilan,Construction,Special trade,198,f
+2015,2021,Negeri Sembilan,Construction,Special trade,233,e
+2015,2022,Negeri Sembilan,Construction,Special trade,230,p
+2015,2019,Negeri Sembilan,Services,"Utilities, transportation & storage and information & communication",7228,f
+2015,2020,Negeri Sembilan,Services,"Utilities, transportation & storage and information & communication",7619,f
+2015,2021,Negeri Sembilan,Services,"Utilities, transportation & storage and information & communication",7776,e
+2015,2022,Negeri Sembilan,Services,"Utilities, transportation & storage and information & communication",8068,p
+2015,2019,Negeri Sembilan,Services,"Wholesale and retail trade, food & beverage and accommodation",7017,f
+2015,2020,Negeri Sembilan,Services,"Wholesale and retail trade, food & beverage and accommodation",6381,f
+2015,2021,Negeri Sembilan,Services,"Wholesale and retail trade, food & beverage and accommodation",6334,e
+2015,2022,Negeri Sembilan,Services,"Wholesale and retail trade, food & beverage and accommodation",7308,p
+2015,2019,Negeri Sembilan,Services,"Finance and insurance, real estate and business services",2929,f
+2015,2020,Negeri Sembilan,Services,"Finance and insurance, real estate and business services",2865,f
+2015,2021,Negeri Sembilan,Services,"Finance and insurance, real estate and business services",3058,e
+2015,2022,Negeri Sembilan,Services,"Finance and insurance, real estate and business services",3273,p
+2015,2019,Negeri Sembilan,Services,Other services,2500,f
+2015,2020,Negeri Sembilan,Services,Other services,2385,f
+2015,2021,Negeri Sembilan,Services,Other services,2369,e
+2015,2022,Negeri Sembilan,Services,Other services,2500,p
+2015,2019,Negeri Sembilan,Services,Government services,4364,f
+2015,2020,Negeri Sembilan,Services,Government services,4572,f
+2015,2021,Negeri Sembilan,Services,Government services,4816,e
+2015,2022,Negeri Sembilan,Services,Government services,5046,p
+2015,2019,Negeri Sembilan,Plus: Import duties,Plus: Import duties,731,f
+2015,2020,Negeri Sembilan,Plus: Import duties,Plus: Import duties,864,f
+2015,2021,Negeri Sembilan,Plus: Import duties,Plus: Import duties,610,e
+2015,2022,Negeri Sembilan,Plus: Import duties,Plus: Import duties,318,p
+2015,2019,Pahang,Agriculture,Agriculture,12849,f
+2015,2020,Pahang,Agriculture,Agriculture,13001,f
+2015,2021,Pahang,Agriculture,Agriculture,13000,e
+2015,2022,Pahang,Agriculture,Agriculture,13633,p
+2015,2019,Pahang,Mining and quarrying,Mining and quarrying,820,f
+2015,2020,Pahang,Mining and quarrying,Mining and quarrying,614,f
+2015,2021,Pahang,Mining and quarrying,Mining and quarrying,507,e
+2015,2022,Pahang,Mining and quarrying,Mining and quarrying,557,p
+2015,2019,Pahang,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1941,f
+2015,2020,Pahang,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1910,f
+2015,2021,Pahang,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1750,e
+2015,2022,Pahang,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1794,p
+2015,2019,Pahang,Manufacturing,"Textiles, wearing apparel and leather products",57,f
+2015,2020,Pahang,Manufacturing,"Textiles, wearing apparel and leather products",57,f
+2015,2021,Pahang,Manufacturing,"Textiles, wearing apparel and leather products",57,e
+2015,2022,Pahang,Manufacturing,"Textiles, wearing apparel and leather products",59,p
+2015,2019,Pahang,Manufacturing,"Wood products, furniture, paper products and printing",790,f
+2015,2020,Pahang,Manufacturing,"Wood products, furniture, paper products and printing",690,f
+2015,2021,Pahang,Manufacturing,"Wood products, furniture, paper products and printing",853,e
+2015,2022,Pahang,Manufacturing,"Wood products, furniture, paper products and printing",837,p
+2015,2019,Pahang,Manufacturing,"Petroleum, chemical, rubber and plastic products",5916,f
+2015,2020,Pahang,Manufacturing,"Petroleum, chemical, rubber and plastic products",5764,f
+2015,2021,Pahang,Manufacturing,"Petroleum, chemical, rubber and plastic products",6077,e
+2015,2022,Pahang,Manufacturing,"Petroleum, chemical, rubber and plastic products",6109,p
+2015,2019,Pahang,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",935,f
+2015,2020,Pahang,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",837,f
+2015,2021,Pahang,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",912,e
+2015,2022,Pahang,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",981,p
+2015,2019,Pahang,Manufacturing,"Electrical, electronic and optical products",178,f
+2015,2020,Pahang,Manufacturing,"Electrical, electronic and optical products",180,f
+2015,2021,Pahang,Manufacturing,"Electrical, electronic and optical products",205,e
+2015,2022,Pahang,Manufacturing,"Electrical, electronic and optical products",220,p
+2015,2019,Pahang,Manufacturing,"Transport equipment, other manufacturing and repair",2950,f
+2015,2020,Pahang,Manufacturing,"Transport equipment, other manufacturing and repair",2808,f
+2015,2021,Pahang,Manufacturing,"Transport equipment, other manufacturing and repair",3137,e
+2015,2022,Pahang,Manufacturing,"Transport equipment, other manufacturing and repair",3745,p
+2015,2019,Pahang,Construction,Residential and non-residential,1022,f
+2015,2020,Pahang,Construction,Residential and non-residential,807,f
+2015,2021,Pahang,Construction,Residential and non-residential,909,e
+2015,2022,Pahang,Construction,Residential and non-residential,895,p
+2015,2019,Pahang,Construction,Civil engineering,404,f
+2015,2020,Pahang,Construction,Civil engineering,396,f
+2015,2021,Pahang,Construction,Civil engineering,506,e
+2015,2022,Pahang,Construction,Civil engineering,513,p
+2015,2019,Pahang,Construction,Special trade,301,f
+2015,2020,Pahang,Construction,Special trade,149,f
+2015,2021,Pahang,Construction,Special trade,187,e
+2015,2022,Pahang,Construction,Special trade,178,p
+2015,2019,Pahang,Services,"Utilities, transportation & storage and information & communication",3545,f
+2015,2020,Pahang,Services,"Utilities, transportation & storage and information & communication",3524,f
+2015,2021,Pahang,Services,"Utilities, transportation & storage and information & communication",3650,e
+2015,2022,Pahang,Services,"Utilities, transportation & storage and information & communication",3908,p
+2015,2019,Pahang,Services,"Wholesale and retail trade, food & beverage and accommodation",10816,f
+2015,2020,Pahang,Services,"Wholesale and retail trade, food & beverage and accommodation",9768,f
+2015,2021,Pahang,Services,"Wholesale and retail trade, food & beverage and accommodation",9653,e
+2015,2022,Pahang,Services,"Wholesale and retail trade, food & beverage and accommodation",11620,p
+2015,2019,Pahang,Services,"Finance and insurance, real estate and business services",2867,f
+2015,2020,Pahang,Services,"Finance and insurance, real estate and business services",2814,f
+2015,2021,Pahang,Services,"Finance and insurance, real estate and business services",2979,e
+2015,2022,Pahang,Services,"Finance and insurance, real estate and business services",3155,p
+2015,2019,Pahang,Services,Other services,6476,f
+2015,2020,Pahang,Services,Other services,4680,f
+2015,2021,Pahang,Services,Other services,3789,e
+2015,2022,Pahang,Services,Other services,5608,p
+2015,2019,Pahang,Services,Government services,6513,f
+2015,2020,Pahang,Services,Government services,6811,f
+2015,2021,Pahang,Services,Government services,7181,e
+2015,2022,Pahang,Services,Government services,7533,p
+2015,2019,Pahang,Plus: Import duties,Plus: Import duties,55,f
+2015,2020,Pahang,Plus: Import duties,Plus: Import duties,75,f
+2015,2021,Pahang,Plus: Import duties,Plus: Import duties,51,e
+2015,2022,Pahang,Plus: Import duties,Plus: Import duties,51,p
+2015,2019,Pulau Pinang,Agriculture,Agriculture,2068,f
+2015,2020,Pulau Pinang,Agriculture,Agriculture,2049,f
+2015,2021,Pulau Pinang,Agriculture,Agriculture,2002,e
+2015,2022,Pulau Pinang,Agriculture,Agriculture,2069,p
+2015,2019,Pulau Pinang,Mining and quarrying,Mining and quarrying,171,f
+2015,2020,Pulau Pinang,Mining and quarrying,Mining and quarrying,139,f
+2015,2021,Pulau Pinang,Mining and quarrying,Mining and quarrying,130,e
+2015,2022,Pulau Pinang,Mining and quarrying,Mining and quarrying,140,p
+2015,2019,Pulau Pinang,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1917,f
+2015,2020,Pulau Pinang,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",2004,f
+2015,2021,Pulau Pinang,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1961,e
+2015,2022,Pulau Pinang,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1985,p
+2015,2019,Pulau Pinang,Manufacturing,"Textiles, wearing apparel and leather products",753,f
+2015,2020,Pulau Pinang,Manufacturing,"Textiles, wearing apparel and leather products",669,f
+2015,2021,Pulau Pinang,Manufacturing,"Textiles, wearing apparel and leather products",731,e
+2015,2022,Pulau Pinang,Manufacturing,"Textiles, wearing apparel and leather products",715,p
+2015,2019,Pulau Pinang,Manufacturing,"Wood products, furniture, paper products and printing",1504,f
+2015,2020,Pulau Pinang,Manufacturing,"Wood products, furniture, paper products and printing",1432,f
+2015,2021,Pulau Pinang,Manufacturing,"Wood products, furniture, paper products and printing",1462,e
+2015,2022,Pulau Pinang,Manufacturing,"Wood products, furniture, paper products and printing",1447,p
+2015,2019,Pulau Pinang,Manufacturing,"Petroleum, chemical, rubber and plastic products",3972,f
+2015,2020,Pulau Pinang,Manufacturing,"Petroleum, chemical, rubber and plastic products",3995,f
+2015,2021,Pulau Pinang,Manufacturing,"Petroleum, chemical, rubber and plastic products",4195,e
+2015,2022,Pulau Pinang,Manufacturing,"Petroleum, chemical, rubber and plastic products",4049,p
+2015,2019,Pulau Pinang,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",3532,f
+2015,2020,Pulau Pinang,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",3166,f
+2015,2021,Pulau Pinang,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",3408,e
+2015,2022,Pulau Pinang,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",3721,p
+2015,2019,Pulau Pinang,Manufacturing,"Electrical, electronic and optical products",26829,f
+2015,2020,Pulau Pinang,Manufacturing,"Electrical, electronic and optical products",28508,f
+2015,2021,Pulau Pinang,Manufacturing,"Electrical, electronic and optical products",33198,e
+2015,2022,Pulau Pinang,Manufacturing,"Electrical, electronic and optical products",40438,p
+2015,2019,Pulau Pinang,Manufacturing,"Transport equipment, other manufacturing and repair",2002,f
+2015,2020,Pulau Pinang,Manufacturing,"Transport equipment, other manufacturing and repair",1854,f
+2015,2021,Pulau Pinang,Manufacturing,"Transport equipment, other manufacturing and repair",1813,e
+2015,2022,Pulau Pinang,Manufacturing,"Transport equipment, other manufacturing and repair",1828,p
+2015,2019,Pulau Pinang,Construction,Residential and non-residential,1960,f
+2015,2020,Pulau Pinang,Construction,Residential and non-residential,1503,f
+2015,2021,Pulau Pinang,Construction,Residential and non-residential,1668,e
+2015,2022,Pulau Pinang,Construction,Residential and non-residential,1895,p
+2015,2019,Pulau Pinang,Construction,Civil engineering,286,f
+2015,2020,Pulau Pinang,Construction,Civil engineering,317,f
+2015,2021,Pulau Pinang,Construction,Civil engineering,328,e
+2015,2022,Pulau Pinang,Construction,Civil engineering,330,p
+2015,2019,Pulau Pinang,Construction,Special trade,398,f
+2015,2020,Pulau Pinang,Construction,Special trade,413,f
+2015,2021,Pulau Pinang,Construction,Special trade,526,e
+2015,2022,Pulau Pinang,Construction,Special trade,496,p
+2015,2019,Pulau Pinang,Services,"Utilities, transportation & storage and information & communication",11685,f
+2015,2020,Pulau Pinang,Services,"Utilities, transportation & storage and information & communication",10943,f
+2015,2021,Pulau Pinang,Services,"Utilities, transportation & storage and information & communication",11536,e
+2015,2022,Pulau Pinang,Services,"Utilities, transportation & storage and information & communication",12867,p
+2015,2019,Pulau Pinang,Services,"Wholesale and retail trade, food & beverage and accommodation",15950,f
+2015,2020,Pulau Pinang,Services,"Wholesale and retail trade, food & beverage and accommodation",14447,f
+2015,2021,Pulau Pinang,Services,"Wholesale and retail trade, food & beverage and accommodation",14244,e
+2015,2022,Pulau Pinang,Services,"Wholesale and retail trade, food & beverage and accommodation",16683,p
+2015,2019,Pulau Pinang,Services,"Finance and insurance, real estate and business services",9210,f
+2015,2020,Pulau Pinang,Services,"Finance and insurance, real estate and business services",8948,f
+2015,2021,Pulau Pinang,Services,"Finance and insurance, real estate and business services",9361,e
+2015,2022,Pulau Pinang,Services,"Finance and insurance, real estate and business services",10175,p
+2015,2019,Pulau Pinang,Services,Other services,5568,f
+2015,2020,Pulau Pinang,Services,Other services,5161,f
+2015,2021,Pulau Pinang,Services,Other services,5150,e
+2015,2022,Pulau Pinang,Services,Other services,5601,p
+2015,2019,Pulau Pinang,Services,Government services,6232,f
+2015,2020,Pulau Pinang,Services,Government services,6479,f
+2015,2021,Pulau Pinang,Services,Government services,6773,e
+2015,2022,Pulau Pinang,Services,Government services,7045,p
+2015,2019,Pulau Pinang,Plus: Import duties,Plus: Import duties,606,f
+2015,2020,Pulau Pinang,Plus: Import duties,Plus: Import duties,663,f
+2015,2021,Pulau Pinang,Plus: Import duties,Plus: Import duties,625,e
+2015,2022,Pulau Pinang,Plus: Import duties,Plus: Import duties,643,p
+2015,2019,Perak,Agriculture,Agriculture,11312,f
+2015,2020,Perak,Agriculture,Agriculture,11430,f
+2015,2021,Perak,Agriculture,Agriculture,11798,e
+2015,2022,Perak,Agriculture,Agriculture,11338,p
+2015,2019,Perak,Mining and quarrying,Mining and quarrying,505,f
+2015,2020,Perak,Mining and quarrying,Mining and quarrying,432,f
+2015,2021,Perak,Mining and quarrying,Mining and quarrying,402,e
+2015,2022,Perak,Mining and quarrying,Mining and quarrying,438,p
+2015,2019,Perak,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",2348,f
+2015,2020,Perak,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",2356,f
+2015,2021,Perak,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",2437,e
+2015,2022,Perak,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",2506,p
+2015,2019,Perak,Manufacturing,"Textiles, wearing apparel and leather products",190,f
+2015,2020,Perak,Manufacturing,"Textiles, wearing apparel and leather products",151,f
+2015,2021,Perak,Manufacturing,"Textiles, wearing apparel and leather products",146,e
+2015,2022,Perak,Manufacturing,"Textiles, wearing apparel and leather products",152,p
+2015,2019,Perak,Manufacturing,"Wood products, furniture, paper products and printing",640,f
+2015,2020,Perak,Manufacturing,"Wood products, furniture, paper products and printing",576,f
+2015,2021,Perak,Manufacturing,"Wood products, furniture, paper products and printing",607,e
+2015,2022,Perak,Manufacturing,"Wood products, furniture, paper products and printing",597,p
+2015,2019,Perak,Manufacturing,"Petroleum, chemical, rubber and plastic products",2462,f
+2015,2020,Perak,Manufacturing,"Petroleum, chemical, rubber and plastic products",3251,f
+2015,2021,Perak,Manufacturing,"Petroleum, chemical, rubber and plastic products",3838,e
+2015,2022,Perak,Manufacturing,"Petroleum, chemical, rubber and plastic products",3471,p
+2015,2019,Perak,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",2630,f
+2015,2020,Perak,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",2252,f
+2015,2021,Perak,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",2356,e
+2015,2022,Perak,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",2396,p
+2015,2019,Perak,Manufacturing,"Electrical, electronic and optical products",4557,f
+2015,2020,Perak,Manufacturing,"Electrical, electronic and optical products",4762,f
+2015,2021,Perak,Manufacturing,"Electrical, electronic and optical products",5192,e
+2015,2022,Perak,Manufacturing,"Electrical, electronic and optical products",5526,p
+2015,2019,Perak,Manufacturing,"Transport equipment, other manufacturing and repair",855,f
+2015,2020,Perak,Manufacturing,"Transport equipment, other manufacturing and repair",808,f
+2015,2021,Perak,Manufacturing,"Transport equipment, other manufacturing and repair",879,e
+2015,2022,Perak,Manufacturing,"Transport equipment, other manufacturing and repair",957,p
+2015,2019,Perak,Construction,Residential and non-residential,1332,f
+2015,2020,Perak,Construction,Residential and non-residential,1202,f
+2015,2021,Perak,Construction,Residential and non-residential,1079,e
+2015,2022,Perak,Construction,Residential and non-residential,1216,p
+2015,2019,Perak,Construction,Civil engineering,830,f
+2015,2020,Perak,Construction,Civil engineering,497,f
+2015,2021,Perak,Construction,Civil engineering,387,e
+2015,2022,Perak,Construction,Civil engineering,412,p
+2015,2019,Perak,Construction,Special trade,328,f
+2015,2020,Perak,Construction,Special trade,358,f
+2015,2021,Perak,Construction,Special trade,455,e
+2015,2022,Perak,Construction,Special trade,410,p
+2015,2019,Perak,Services,"Utilities, transportation & storage and information & communication",15408,f
+2015,2020,Perak,Services,"Utilities, transportation & storage and information & communication",14572,f
+2015,2021,Perak,Services,"Utilities, transportation & storage and information & communication",15213,e
+2015,2022,Perak,Services,"Utilities, transportation & storage and information & communication",15933,p
+2015,2019,Perak,Services,"Wholesale and retail trade, food & beverage and accommodation",14193,f
+2015,2020,Perak,Services,"Wholesale and retail trade, food & beverage and accommodation",13097,f
+2015,2021,Perak,Services,"Wholesale and retail trade, food & beverage and accommodation",13023,e
+2015,2022,Perak,Services,"Wholesale and retail trade, food & beverage and accommodation",14844,p
+2015,2019,Perak,Services,"Finance and insurance, real estate and business services",5672,f
+2015,2020,Perak,Services,"Finance and insurance, real estate and business services",5665,f
+2015,2021,Perak,Services,"Finance and insurance, real estate and business services",5897,e
+2015,2022,Perak,Services,"Finance and insurance, real estate and business services",6092,p
+2015,2019,Perak,Services,Other services,4313,f
+2015,2020,Perak,Services,Other services,3999,f
+2015,2021,Perak,Services,Other services,3885,e
+2015,2022,Perak,Services,Other services,4099,p
+2015,2019,Perak,Services,Government services,8384,f
+2015,2020,Perak,Services,Government services,8804,f
+2015,2021,Perak,Services,Government services,9296,e
+2015,2022,Perak,Services,Government services,9773,p
+2015,2019,Perak,Plus: Import duties,Plus: Import duties,32,f
+2015,2020,Perak,Plus: Import duties,Plus: Import duties,51,f
+2015,2021,Perak,Plus: Import duties,Plus: Import duties,35,e
+2015,2022,Perak,Plus: Import duties,Plus: Import duties,52,p
+2015,2019,Perlis,Agriculture,Agriculture,1334,f
+2015,2020,Perlis,Agriculture,Agriculture,1088,f
+2015,2021,Perlis,Agriculture,Agriculture,1024,e
+2015,2022,Perlis,Agriculture,Agriculture,1046,p
+2015,2019,Perlis,Mining and quarrying,Mining and quarrying,33,f
+2015,2020,Perlis,Mining and quarrying,Mining and quarrying,30,f
+2015,2021,Perlis,Mining and quarrying,Mining and quarrying,29,e
+2015,2022,Perlis,Mining and quarrying,Mining and quarrying,31,p
+2015,2019,Perlis,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",103,f
+2015,2020,Perlis,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",106,f
+2015,2021,Perlis,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",119,e
+2015,2022,Perlis,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",133,p
+2015,2019,Perlis,Manufacturing,"Textiles, wearing apparel and leather products",35,f
+2015,2020,Perlis,Manufacturing,"Textiles, wearing apparel and leather products",31,f
+2015,2021,Perlis,Manufacturing,"Textiles, wearing apparel and leather products",34,e
+2015,2022,Perlis,Manufacturing,"Textiles, wearing apparel and leather products",34,p
+2015,2019,Perlis,Manufacturing,"Wood products, furniture, paper products and printing",9,f
+2015,2020,Perlis,Manufacturing,"Wood products, furniture, paper products and printing",8,f
+2015,2021,Perlis,Manufacturing,"Wood products, furniture, paper products and printing",8,e
+2015,2022,Perlis,Manufacturing,"Wood products, furniture, paper products and printing",8,p
+2015,2019,Perlis,Manufacturing,"Petroleum, chemical, rubber and plastic products",110,f
+2015,2020,Perlis,Manufacturing,"Petroleum, chemical, rubber and plastic products",107,f
+2015,2021,Perlis,Manufacturing,"Petroleum, chemical, rubber and plastic products",110,e
+2015,2022,Perlis,Manufacturing,"Petroleum, chemical, rubber and plastic products",119,p
+2015,2019,Perlis,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",164,f
+2015,2020,Perlis,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",143,f
+2015,2021,Perlis,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",143,e
+2015,2022,Perlis,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",142,p
+2015,2019,Perlis,Manufacturing,"Electrical, electronic and optical products",4,f
+2015,2020,Perlis,Manufacturing,"Electrical, electronic and optical products",4,f
+2015,2021,Perlis,Manufacturing,"Electrical, electronic and optical products",4,e
+2015,2022,Perlis,Manufacturing,"Electrical, electronic and optical products",4,p
+2015,2019,Perlis,Manufacturing,"Transport equipment, other manufacturing and repair",46,f
+2015,2020,Perlis,Manufacturing,"Transport equipment, other manufacturing and repair",46,f
+2015,2021,Perlis,Manufacturing,"Transport equipment, other manufacturing and repair",50,e
+2015,2022,Perlis,Manufacturing,"Transport equipment, other manufacturing and repair",48,p
+2015,2019,Perlis,Construction,Residential and non-residential,71,f
+2015,2020,Perlis,Construction,Residential and non-residential,51,f
+2015,2021,Perlis,Construction,Residential and non-residential,53,e
+2015,2022,Perlis,Construction,Residential and non-residential,51,p
+2015,2019,Perlis,Construction,Civil engineering,18,f
+2015,2020,Perlis,Construction,Civil engineering,16,f
+2015,2021,Perlis,Construction,Civil engineering,17,e
+2015,2022,Perlis,Construction,Civil engineering,21,p
+2015,2019,Perlis,Construction,Special trade,78,f
+2015,2020,Perlis,Construction,Special trade,83,f
+2015,2021,Perlis,Construction,Special trade,82,e
+2015,2022,Perlis,Construction,Special trade,80,p
+2015,2019,Perlis,Services,"Utilities, transportation & storage and information & communication",1006,f
+2015,2020,Perlis,Services,"Utilities, transportation & storage and information & communication",982,f
+2015,2021,Perlis,Services,"Utilities, transportation & storage and information & communication",1002,e
+2015,2022,Perlis,Services,"Utilities, transportation & storage and information & communication",1033,p
+2015,2019,Perlis,Services,"Wholesale and retail trade, food & beverage and accommodation",791,f
+2015,2020,Perlis,Services,"Wholesale and retail trade, food & beverage and accommodation",727,f
+2015,2021,Perlis,Services,"Wholesale and retail trade, food & beverage and accommodation",722,e
+2015,2022,Perlis,Services,"Wholesale and retail trade, food & beverage and accommodation",818,p
+2015,2019,Perlis,Services,"Finance and insurance, real estate and business services",421,f
+2015,2020,Perlis,Services,"Finance and insurance, real estate and business services",409,f
+2015,2021,Perlis,Services,"Finance and insurance, real estate and business services",411,e
+2015,2022,Perlis,Services,"Finance and insurance, real estate and business services",435,p
+2015,2019,Perlis,Services,Other services,362,f
+2015,2020,Perlis,Services,Other services,354,f
+2015,2021,Perlis,Services,Other services,350,e
+2015,2022,Perlis,Services,Other services,361,p
+2015,2019,Perlis,Services,Government services,1495,f
+2015,2020,Perlis,Services,Government services,1561,f
+2015,2021,Perlis,Services,Government services,1636,e
+2015,2022,Perlis,Services,Government services,1708,p
+2015,2019,Perlis,Plus: Import duties,Plus: Import duties,72,f
+2015,2020,Perlis,Plus: Import duties,Plus: Import duties,40,f
+2015,2021,Perlis,Plus: Import duties,Plus: Import duties,76,e
+2015,2022,Perlis,Plus: Import duties,Plus: Import duties,129,p
+2015,2019,Selangor,Agriculture,Agriculture,4709,f
+2015,2020,Selangor,Agriculture,Agriculture,4721,f
+2015,2021,Selangor,Agriculture,Agriculture,4954,e
+2015,2022,Selangor,Agriculture,Agriculture,4874,p
+2015,2019,Selangor,Mining and quarrying,Mining and quarrying,859,f
+2015,2020,Selangor,Mining and quarrying,Mining and quarrying,755,f
+2015,2021,Selangor,Mining and quarrying,Mining and quarrying,708,e
+2015,2022,Selangor,Mining and quarrying,Mining and quarrying,777,p
+2015,2019,Selangor,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",16679,f
+2015,2020,Selangor,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",15822,f
+2015,2021,Selangor,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",17271,e
+2015,2022,Selangor,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",19336,p
+2015,2019,Selangor,Manufacturing,"Textiles, wearing apparel and leather products",1456,f
+2015,2020,Selangor,Manufacturing,"Textiles, wearing apparel and leather products",1330,f
+2015,2021,Selangor,Manufacturing,"Textiles, wearing apparel and leather products",1452,e
+2015,2022,Selangor,Manufacturing,"Textiles, wearing apparel and leather products",1590,p
+2015,2019,Selangor,Manufacturing,"Wood products, furniture, paper products and printing",7450,f
+2015,2020,Selangor,Manufacturing,"Wood products, furniture, paper products and printing",6992,f
+2015,2021,Selangor,Manufacturing,"Wood products, furniture, paper products and printing",7738,e
+2015,2022,Selangor,Manufacturing,"Wood products, furniture, paper products and printing",8482,p
+2015,2019,Selangor,Manufacturing,"Petroleum, chemical, rubber and plastic products",13576,f
+2015,2020,Selangor,Manufacturing,"Petroleum, chemical, rubber and plastic products",16106,f
+2015,2021,Selangor,Manufacturing,"Petroleum, chemical, rubber and plastic products",20112,e
+2015,2022,Selangor,Manufacturing,"Petroleum, chemical, rubber and plastic products",18372,p
+2015,2019,Selangor,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",15806,f
+2015,2020,Selangor,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",13539,f
+2015,2021,Selangor,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",14171,e
+2015,2022,Selangor,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",15810,p
+2015,2019,Selangor,Manufacturing,"Electrical, electronic and optical products",25032,f
+2015,2020,Selangor,Manufacturing,"Electrical, electronic and optical products",25809,f
+2015,2021,Selangor,Manufacturing,"Electrical, electronic and optical products",31525,e
+2015,2022,Selangor,Manufacturing,"Electrical, electronic and optical products",35814,p
+2015,2019,Selangor,Manufacturing,"Transport equipment, other manufacturing and repair",15942,f
+2015,2020,Selangor,Manufacturing,"Transport equipment, other manufacturing and repair",15515,f
+2015,2021,Selangor,Manufacturing,"Transport equipment, other manufacturing and repair",15263,e
+2015,2022,Selangor,Manufacturing,"Transport equipment, other manufacturing and repair",17802,p
+2015,2019,Selangor,Construction,Residential and non-residential,7436,f
+2015,2020,Selangor,Construction,Residential and non-residential,6818,f
+2015,2021,Selangor,Construction,Residential and non-residential,6419,e
+2015,2022,Selangor,Construction,Residential and non-residential,6709,p
+2015,2019,Selangor,Construction,Civil engineering,8452,f
+2015,2020,Selangor,Construction,Civil engineering,6710,f
+2015,2021,Selangor,Construction,Civil engineering,5547,e
+2015,2022,Selangor,Construction,Civil engineering,5042,p
+2015,2019,Selangor,Construction,Special trade,4775,f
+2015,2020,Selangor,Construction,Special trade,5137,f
+2015,2021,Selangor,Construction,Special trade,5527,e
+2015,2022,Selangor,Construction,Special trade,6452,p
+2015,2019,Selangor,Services,"Utilities, transportation & storage and information & communication",60946,f
+2015,2020,Selangor,Services,"Utilities, transportation & storage and information & communication",57869,f
+2015,2021,Selangor,Services,"Utilities, transportation & storage and information & communication",60189,e
+2015,2022,Selangor,Services,"Utilities, transportation & storage and information & communication",68967,p
+2015,2019,Selangor,Services,"Wholesale and retail trade, food & beverage and accommodation",79947,f
+2015,2020,Selangor,Services,"Wholesale and retail trade, food & beverage and accommodation",72643,f
+2015,2021,Selangor,Services,"Wholesale and retail trade, food & beverage and accommodation",73312,e
+2015,2022,Selangor,Services,"Wholesale and retail trade, food & beverage and accommodation",86189,p
+2015,2019,Selangor,Services,"Finance and insurance, real estate and business services",39951,f
+2015,2020,Selangor,Services,"Finance and insurance, real estate and business services",36963,f
+2015,2021,Selangor,Services,"Finance and insurance, real estate and business services",38362,e
+2015,2022,Selangor,Services,"Finance and insurance, real estate and business services",42500,p
+2015,2019,Selangor,Services,Other services,16754,f
+2015,2020,Selangor,Services,Other services,14958,f
+2015,2021,Selangor,Services,Other services,14648,e
+2015,2022,Selangor,Services,Other services,15697,p
+2015,2019,Selangor,Services,Government services,16750,f
+2015,2020,Selangor,Services,Government services,17694,f
+2015,2021,Selangor,Services,Government services,18702,e
+2015,2022,Selangor,Services,Government services,19773,p
+2015,2019,Selangor,Plus: Import duties,Plus: Import duties,8487,f
+2015,2020,Selangor,Plus: Import duties,Plus: Import duties,7423,f
+2015,2021,Selangor,Plus: Import duties,Plus: Import duties,8084,e
+2015,2022,Selangor,Plus: Import duties,Plus: Import duties,10686,p
+2015,2019,Terengganu,Agriculture,Agriculture,3016,f
+2015,2020,Terengganu,Agriculture,Agriculture,2903,f
+2015,2021,Terengganu,Agriculture,Agriculture,2753,e
+2015,2022,Terengganu,Agriculture,Agriculture,2623,p
+2015,2019,Terengganu,Mining and quarrying,Mining and quarrying,201,f
+2015,2020,Terengganu,Mining and quarrying,Mining and quarrying,176,f
+2015,2021,Terengganu,Mining and quarrying,Mining and quarrying,178,e
+2015,2022,Terengganu,Mining and quarrying,Mining and quarrying,192,p
+2015,2019,Terengganu,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",112,f
+2015,2020,Terengganu,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",109,f
+2015,2021,Terengganu,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",105,e
+2015,2022,Terengganu,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",103,p
+2015,2019,Terengganu,Manufacturing,"Textiles, wearing apparel and leather products",56,f
+2015,2020,Terengganu,Manufacturing,"Textiles, wearing apparel and leather products",46,f
+2015,2021,Terengganu,Manufacturing,"Textiles, wearing apparel and leather products",56,e
+2015,2022,Terengganu,Manufacturing,"Textiles, wearing apparel and leather products",57,p
+2015,2019,Terengganu,Manufacturing,"Wood products, furniture, paper products and printing",243,f
+2015,2020,Terengganu,Manufacturing,"Wood products, furniture, paper products and printing",200,f
+2015,2021,Terengganu,Manufacturing,"Wood products, furniture, paper products and printing",184,e
+2015,2022,Terengganu,Manufacturing,"Wood products, furniture, paper products and printing",186,p
+2015,2019,Terengganu,Manufacturing,"Petroleum, chemical, rubber and plastic products",12330,f
+2015,2020,Terengganu,Manufacturing,"Petroleum, chemical, rubber and plastic products",11169,f
+2015,2021,Terengganu,Manufacturing,"Petroleum, chemical, rubber and plastic products",12287,e
+2015,2022,Terengganu,Manufacturing,"Petroleum, chemical, rubber and plastic products",13340,p
+2015,2019,Terengganu,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",254,f
+2015,2020,Terengganu,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",246,f
+2015,2021,Terengganu,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",266,e
+2015,2022,Terengganu,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",280,p
+2015,2019,Terengganu,Manufacturing,"Electrical, electronic and optical products",3,f
+2015,2020,Terengganu,Manufacturing,"Electrical, electronic and optical products",3,f
+2015,2021,Terengganu,Manufacturing,"Electrical, electronic and optical products",3,e
+2015,2022,Terengganu,Manufacturing,"Electrical, electronic and optical products",3,p
+2015,2019,Terengganu,Manufacturing,"Transport equipment, other manufacturing and repair",95,f
+2015,2020,Terengganu,Manufacturing,"Transport equipment, other manufacturing and repair",90,f
+2015,2021,Terengganu,Manufacturing,"Transport equipment, other manufacturing and repair",93,e
+2015,2022,Terengganu,Manufacturing,"Transport equipment, other manufacturing and repair",91,p
+2015,2019,Terengganu,Construction,Residential and non-residential,685,f
+2015,2020,Terengganu,Construction,Residential and non-residential,546,f
+2015,2021,Terengganu,Construction,Residential and non-residential,542,e
+2015,2022,Terengganu,Construction,Residential and non-residential,497,p
+2015,2019,Terengganu,Construction,Civil engineering,356,f
+2015,2020,Terengganu,Construction,Civil engineering,393,f
+2015,2021,Terengganu,Construction,Civil engineering,371,e
+2015,2022,Terengganu,Construction,Civil engineering,458,p
+2015,2019,Terengganu,Construction,Special trade,125,f
+2015,2020,Terengganu,Construction,Special trade,141,f
+2015,2021,Terengganu,Construction,Special trade,195,e
+2015,2022,Terengganu,Construction,Special trade,189,p
+2015,2019,Terengganu,Services,"Utilities, transportation & storage and information & communication",6135,f
+2015,2020,Terengganu,Services,"Utilities, transportation & storage and information & communication",5766,f
+2015,2021,Terengganu,Services,"Utilities, transportation & storage and information & communication",5738,e
+2015,2022,Terengganu,Services,"Utilities, transportation & storage and information & communication",5846,p
+2015,2019,Terengganu,Services,"Wholesale and retail trade, food & beverage and accommodation",4447,f
+2015,2020,Terengganu,Services,"Wholesale and retail trade, food & beverage and accommodation",4072,f
+2015,2021,Terengganu,Services,"Wholesale and retail trade, food & beverage and accommodation",4041,e
+2015,2022,Terengganu,Services,"Wholesale and retail trade, food & beverage and accommodation",4650,p
+2015,2019,Terengganu,Services,"Finance and insurance, real estate and business services",1453,f
+2015,2020,Terengganu,Services,"Finance and insurance, real estate and business services",1449,f
+2015,2021,Terengganu,Services,"Finance and insurance, real estate and business services",1513,e
+2015,2022,Terengganu,Services,"Finance and insurance, real estate and business services",1614,p
+2015,2019,Terengganu,Services,Other services,1472,f
+2015,2020,Terengganu,Services,Other services,1455,f
+2015,2021,Terengganu,Services,Other services,1457,e
+2015,2022,Terengganu,Services,Other services,1505,p
+2015,2019,Terengganu,Services,Government services,5002,f
+2015,2020,Terengganu,Services,Government services,5200,f
+2015,2021,Terengganu,Services,Government services,5441,e
+2015,2022,Terengganu,Services,Government services,5664,p
+2015,2019,Terengganu,Plus: Import duties,Plus: Import duties,16,f
+2015,2020,Terengganu,Plus: Import duties,Plus: Import duties,31,f
+2015,2021,Terengganu,Plus: Import duties,Plus: Import duties,16,e
+2015,2022,Terengganu,Plus: Import duties,Plus: Import duties,8,p
+2015,2019,Sabah,Agriculture,Agriculture,13719,f
+2015,2020,Sabah,Agriculture,Agriculture,12798,f
+2015,2021,Sabah,Agriculture,Agriculture,12520,e
+2015,2022,Sabah,Agriculture,Agriculture,12492,p
+2015,2019,Sabah,Mining and quarrying,Mining and quarrying,22736,f
+2015,2020,Sabah,Mining and quarrying,Mining and quarrying,19936,f
+2015,2021,Sabah,Mining and quarrying,Mining and quarrying,20574,e
+2015,2022,Sabah,Mining and quarrying,Mining and quarrying,20307,p
+2015,2019,Sabah,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",4523,f
+2015,2020,Sabah,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",4331,f
+2015,2021,Sabah,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",3981,e
+2015,2022,Sabah,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",3785,p
+2015,2019,Sabah,Manufacturing,"Textiles, wearing apparel and leather products",63,f
+2015,2020,Sabah,Manufacturing,"Textiles, wearing apparel and leather products",53,f
+2015,2021,Sabah,Manufacturing,"Textiles, wearing apparel and leather products",55,e
+2015,2022,Sabah,Manufacturing,"Textiles, wearing apparel and leather products",58,p
+2015,2019,Sabah,Manufacturing,"Wood products, furniture, paper products and printing",739,f
+2015,2020,Sabah,Manufacturing,"Wood products, furniture, paper products and printing",602,f
+2015,2021,Sabah,Manufacturing,"Wood products, furniture, paper products and printing",751,e
+2015,2022,Sabah,Manufacturing,"Wood products, furniture, paper products and printing",748,p
+2015,2019,Sabah,Manufacturing,"Petroleum, chemical, rubber and plastic products",284,f
+2015,2020,Sabah,Manufacturing,"Petroleum, chemical, rubber and plastic products",282,f
+2015,2021,Sabah,Manufacturing,"Petroleum, chemical, rubber and plastic products",318,e
+2015,2022,Sabah,Manufacturing,"Petroleum, chemical, rubber and plastic products",352,p
+2015,2019,Sabah,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",719,f
+2015,2020,Sabah,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",643,f
+2015,2021,Sabah,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",679,e
+2015,2022,Sabah,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",687,p
+2015,2019,Sabah,Manufacturing,"Electrical, electronic and optical products",18,f
+2015,2020,Sabah,Manufacturing,"Electrical, electronic and optical products",16,f
+2015,2021,Sabah,Manufacturing,"Electrical, electronic and optical products",18,e
+2015,2022,Sabah,Manufacturing,"Electrical, electronic and optical products",19,p
+2015,2019,Sabah,Manufacturing,"Transport equipment, other manufacturing and repair",126,f
+2015,2020,Sabah,Manufacturing,"Transport equipment, other manufacturing and repair",115,f
+2015,2021,Sabah,Manufacturing,"Transport equipment, other manufacturing and repair",129,e
+2015,2022,Sabah,Manufacturing,"Transport equipment, other manufacturing and repair",130,p
+2015,2019,Sabah,Construction,Residential and non-residential,1640,f
+2015,2020,Sabah,Construction,Residential and non-residential,1188,f
+2015,2021,Sabah,Construction,Residential and non-residential,1083,e
+2015,2022,Sabah,Construction,Residential and non-residential,1090,p
+2015,2019,Sabah,Construction,Civil engineering,849,f
+2015,2020,Sabah,Construction,Civil engineering,745,f
+2015,2021,Sabah,Construction,Civil engineering,966,e
+2015,2022,Sabah,Construction,Civil engineering,1068,p
+2015,2019,Sabah,Construction,Special trade,610,f
+2015,2020,Sabah,Construction,Special trade,264,f
+2015,2021,Sabah,Construction,Special trade,320,e
+2015,2022,Sabah,Construction,Special trade,359,p
+2015,2019,Sabah,Services,"Utilities, transportation & storage and information & communication",7161,f
+2015,2020,Sabah,Services,"Utilities, transportation & storage and information & communication",6528,f
+2015,2021,Sabah,Services,"Utilities, transportation & storage and information & communication",6698,e
+2015,2022,Sabah,Services,"Utilities, transportation & storage and information & communication",7517,p
+2015,2019,Sabah,Services,"Wholesale and retail trade, food & beverage and accommodation",14959,f
+2015,2020,Sabah,Services,"Wholesale and retail trade, food & beverage and accommodation",12938,f
+2015,2021,Sabah,Services,"Wholesale and retail trade, food & beverage and accommodation",12880,e
+2015,2022,Sabah,Services,"Wholesale and retail trade, food & beverage and accommodation",14216,p
+2015,2019,Sabah,Services,"Finance and insurance, real estate and business services",5681,f
+2015,2020,Sabah,Services,"Finance and insurance, real estate and business services",5229,f
+2015,2021,Sabah,Services,"Finance and insurance, real estate and business services",5391,e
+2015,2022,Sabah,Services,"Finance and insurance, real estate and business services",5682,p
+2015,2019,Sabah,Services,Other services,3269,f
+2015,2020,Sabah,Services,Other services,3089,f
+2015,2021,Sabah,Services,Other services,3044,e
+2015,2022,Sabah,Services,Other services,3271,p
+2015,2019,Sabah,Services,Government services,8359,f
+2015,2020,Sabah,Services,Government services,8814,f
+2015,2021,Sabah,Services,Government services,9351,e
+2015,2022,Sabah,Services,Government services,9879,p
+2015,2019,Sabah,Plus: Import duties,Plus: Import duties,187,f
+2015,2020,Sabah,Plus: Import duties,Plus: Import duties,269,f
+2015,2021,Sabah,Plus: Import duties,Plus: Import duties,240,e
+2015,2022,Sabah,Plus: Import duties,Plus: Import duties,270,p
+2015,2019,Sarawak,Agriculture,Agriculture,16578,f
+2015,2020,Sarawak,Agriculture,Agriculture,14907,f
+2015,2021,Sarawak,Agriculture,Agriculture,14434,e
+2015,2022,Sarawak,Agriculture,Agriculture,14542,p
+2015,2019,Sarawak,Mining and quarrying,Mining and quarrying,30013,f
+2015,2020,Sarawak,Mining and quarrying,Mining and quarrying,28591,f
+2015,2021,Sarawak,Mining and quarrying,Mining and quarrying,27875,e
+2015,2022,Sarawak,Mining and quarrying,Mining and quarrying,29475,p
+2015,2019,Sarawak,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",2137,f
+2015,2020,Sarawak,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",2013,f
+2015,2021,Sarawak,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1879,e
+2015,2022,Sarawak,Manufacturing,"Vegetable and animal oils & fats, food processing, beverages and tobacco products",1929,p
+2015,2019,Sarawak,Manufacturing,"Textiles, wearing apparel and leather products",32,f
+2015,2020,Sarawak,Manufacturing,"Textiles, wearing apparel and leather products",26,f
+2015,2021,Sarawak,Manufacturing,"Textiles, wearing apparel and leather products",28,e
+2015,2022,Sarawak,Manufacturing,"Textiles, wearing apparel and leather products",30,p
+2015,2019,Sarawak,Manufacturing,"Wood products, furniture, paper products and printing",2563,f
+2015,2020,Sarawak,Manufacturing,"Wood products, furniture, paper products and printing",2179,f
+2015,2021,Sarawak,Manufacturing,"Wood products, furniture, paper products and printing",2006,e
+2015,2022,Sarawak,Manufacturing,"Wood products, furniture, paper products and printing",2247,p
+2015,2019,Sarawak,Manufacturing,"Petroleum, chemical, rubber and plastic products",29123,f
+2015,2020,Sarawak,Manufacturing,"Petroleum, chemical, rubber and plastic products",26524,f
+2015,2021,Sarawak,Manufacturing,"Petroleum, chemical, rubber and plastic products",30494,e
+2015,2022,Sarawak,Manufacturing,"Petroleum, chemical, rubber and plastic products",32355,p
+2015,2019,Sarawak,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",1280,f
+2015,2020,Sarawak,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",1178,f
+2015,2021,Sarawak,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",1173,e
+2015,2022,Sarawak,Manufacturing,"Non-metallic mineral products, basic metal and fabricated metal products",1200,p
+2015,2019,Sarawak,Manufacturing,"Electrical, electronic and optical products",1056,f
+2015,2020,Sarawak,Manufacturing,"Electrical, electronic and optical products",1124,f
+2015,2021,Sarawak,Manufacturing,"Electrical, electronic and optical products",1154,e
+2015,2022,Sarawak,Manufacturing,"Electrical, electronic and optical products",1064,p
+2015,2019,Sarawak,Manufacturing,"Transport equipment, other manufacturing and repair",423,f
+2015,2020,Sarawak,Manufacturing,"Transport equipment, other manufacturing and repair",384,f
+2015,2021,Sarawak,Manufacturing,"Transport equipment, other manufacturing and repair",388,e
+2015,2022,Sarawak,Manufacturing,"Transport equipment, other manufacturing and repair",382,p
+2015,2019,Sarawak,Construction,Residential and non-residential,1961,f
+2015,2020,Sarawak,Construction,Residential and non-residential,1640,f
+2015,2021,Sarawak,Construction,Residential and non-residential,1755,e
+2015,2022,Sarawak,Construction,Residential and non-residential,1978,p
+2015,2019,Sarawak,Construction,Civil engineering,1940,f
+2015,2020,Sarawak,Construction,Civil engineering,1835,f
+2015,2021,Sarawak,Construction,Civil engineering,2010,e
+2015,2022,Sarawak,Construction,Civil engineering,1988,p
+2015,2019,Sarawak,Construction,Special trade,575,f
+2015,2020,Sarawak,Construction,Special trade,606,f
+2015,2021,Sarawak,Construction,Special trade,733,e
+2015,2022,Sarawak,Construction,Special trade,711,p
+2015,2019,Sarawak,Services,"Utilities, transportation & storage and information & communication",11038,f
+2015,2020,Sarawak,Services,"Utilities, transportation & storage and information & communication",9984,f
+2015,2021,Sarawak,Services,"Utilities, transportation & storage and information & communication",10321,e
+2015,2022,Sarawak,Services,"Utilities, transportation & storage and information & communication",12024,p
+2015,2019,Sarawak,Services,"Wholesale and retail trade, food & beverage and accommodation",15589,f
+2015,2020,Sarawak,Services,"Wholesale and retail trade, food & beverage and accommodation",14190,f
+2015,2021,Sarawak,Services,"Wholesale and retail trade, food & beverage and accommodation",14236,e
+2015,2022,Sarawak,Services,"Wholesale and retail trade, food & beverage and accommodation",15835,p
+2015,2019,Sarawak,Services,"Finance and insurance, real estate and business services",9363,f
+2015,2020,Sarawak,Services,"Finance and insurance, real estate and business services",9060,f
+2015,2021,Sarawak,Services,"Finance and insurance, real estate and business services",9379,e
+2015,2022,Sarawak,Services,"Finance and insurance, real estate and business services",9956,p
+2015,2019,Sarawak,Services,Other services,4104,f
+2015,2020,Sarawak,Services,Other services,3815,f
+2015,2021,Sarawak,Services,Other services,3750,e
+2015,2022,Sarawak,Services,Other services,3960,p
+2015,2019,Sarawak,Services,Government services,8667,f
+2015,2020,Sarawak,Services,Government services,9112,f
+2015,2021,Sarawak,Services,Government services,9602,e
+2015,2022,Sarawak,Services,Government services,10057,p
+2015,2019,Sarawak,Plus: Import duties,Plus: Import duties,318,f
+2015,2020,Sarawak,Plus: Import duties,Plus: Import duties,388,f
+2015,2021,Sarawak,Plus: Import duties,Plus: Import duties,355,e
+2015,2022,Sarawak,Plus: Import duties,Plus: Import duties,428,p
