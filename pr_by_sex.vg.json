@@ -19,7 +19,7 @@
     ],
   
     "data": {
-      "url": "https://raw.githubusercontent.com/Zfeng0207/vega-lite/refs/heads/main/lfs_state_sex_cleaned.csv",
+      "url": "https://raw.githubusercontent.com/Zfeng0207/vega-lite/refs/heads/main/data/lfs_state_sex_cleaned.csv",
       "format": {
         "type": "csv",
         "parse": { "year": "number", "p_rate": "number" }

@@ -37,7 +37,7 @@
     "data": [
       {
         "name": "lf_raw",
-        "url": "https://raw.githubusercontent.com/Zfeng0207/VegaLite/refs/heads/main/lfs_state_sex.csv",
+        "url": "https://raw.githubusercontent.com/Zfeng0207/vega-lite/refs/heads/main/data/lfs_state_sex_cleaned.csv",
         "format": {
           "type": "csv",
           "parse": {

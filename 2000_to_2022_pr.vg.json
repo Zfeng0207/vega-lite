@@ -1,82 +1,214 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Malaysia Employment Participation Rate by Sex, 2000–2022",
-    "width": 820,
-    "height": 420,
-  
-    "data": {
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "background": "white",
+  "padding": 5,
+  "width": 820,
+  "height": 420,
+  "title": {
+    "text": "Malaysia Employment Participation Rate by Sex, 2000–2022",
+    "frame": "group"
+  },
+  "style": "cell",
+  "data": [
+    {
+      "name": "source_0",
       "url": "https://raw.githubusercontent.com/Zfeng0207/VegaLite/refs/heads/main/lfs_state_sex.csv",
       "format": {
         "type": "csv",
-        "parse": {
-          "date": "date",
-          "lf": "number",
-          "lf_outside": "number"
-        }
-      }
-    },
-  
-    "transform": [
-      { "calculate": "year(datum.date)", "as": "year" },
-      { "filter": "datum.year >= 2000 && datum.year <= 2022" },
-      { "filter": "datum.sex == 'male' || datum.sex == 'female'" },
-  
-      {
-        "aggregate": [
-          { "op": "sum", "field": "lf", "as": "lf_total" },
-          { "op": "sum", "field": "lf_outside", "as": "lf_out_total" }
-        ],
-        "groupby": ["year", "sex"]
+        "parse": {"date": "date", "lf": "number", "lf_outside": "number"},
+        "delimiter": ","
       },
-      {
-        "calculate": "(datum.lf_total / (datum.lf_total + datum.lf_out_total)) * 100",
-        "as": "p_rate_nat"
-      }
-    ],
-  
-    "mark": { "type": "line", "point": true, "interpolate": "monotone" },
-  
-    "encoding": {
-      "x": {
-        "field": "year",
-        "type": "quantitative",
-        "title": "Year",
-        "axis": { "tickMinStep": 1 }
-      },
-      "y": {
-        "field": "p_rate_nat",
-        "type": "quantitative",
-        "title": "Participation Rate (%)",
-        "scale": { "domain": [40, 100] },
-        "axis": { "tickCount": 13, "values": [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100] }
-      },
-      "color": {
-        "field": "sex",
-        "type": "nominal",
-        "scale": {
-          "domain": ["female", "male"],
-          "range": ["#377eb8", "#ff7f0e"]
+      "transform": [
+        {"type": "formula", "expr": "year(datum.date)", "as": "year"},
+        {"type": "filter", "expr": "datum.year >= 2000 && datum.year <= 2022"},
+        {
+          "type": "filter",
+          "expr": "datum.sex == 'male' || datum.sex == 'female'"
         },
-        "title": "Sex"
-      },
-      "tooltip": [
-        { "field": "year", "title": "Year" },
-        { "field": "sex", "title": "Sex" },
-        { "field": "p_rate_nat", "title": "Participation Rate (%)", "format": ".1f" },
-        { "field": "lf_total", "title": "Labour Force (sum)", "format": ",.0f" }
+        {
+          "type": "aggregate",
+          "groupby": ["year", "sex"],
+          "ops": ["sum", "sum"],
+          "fields": ["lf", "lf_outside"],
+          "as": ["lf_total", "lf_out_total"]
+        },
+        {
+          "type": "formula",
+          "expr": "(datum.lf_total / (datum.lf_total + datum.lf_out_total)) * 100",
+          "as": "p_rate_nat"
+        }
       ]
     },
-  
-    "config": {
-      "view": { "stroke": null },
-      "axis": {
-        "labelFontSize": 11,
-        "titleFontSize": 12
+    {
+      "name": "data_0",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"year\"]) && isFinite(+datum[\"year\"]) && isValid(datum[\"p_rate_nat\"]) && isFinite(+datum[\"p_rate_nat\"])"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "layer_0_pathgroup",
+      "type": "group",
+      "from": {
+        "facet": {
+          "name": "faceted_path_layer_0_main",
+          "data": "source_0",
+          "groupby": ["sex"]
+        }
       },
-      "legend": {
-        "titleFontSize": 12,
-        "labelFontSize": 11
+      "encode": {
+        "update": {
+          "width": {"field": {"group": "width"}},
+          "height": {"field": {"group": "height"}}
+        }
+      },
+      "marks": [
+        {
+          "name": "layer_0_marks",
+          "type": "line",
+          "style": ["line"],
+          "sort": {"field": "x"},
+          "from": {"data": "faceted_path_layer_0_main"},
+          "encode": {
+            "update": {
+              "interpolate": {"value": "monotone"},
+              "stroke": {"scale": "color", "field": "sex"},
+              "tooltip": {
+                "signal": "{\"Year\": isValid(datum[\"year\"]) ? datum[\"year\"] : \"\"+datum[\"year\"], \"Sex\": isValid(datum[\"sex\"]) ? datum[\"sex\"] : \"\"+datum[\"sex\"], \"Participation Rate (%)\": format(datum[\"p_rate_nat\"], \".1f\"), \"Labour Force (sum)\": format(datum[\"lf_total\"], \",.0f\")}"
+              },
+              "description": {
+                "signal": "\"Year: \" + (format(datum[\"year\"], \"\")) + \"; Participation Rate (%): \" + (format(datum[\"p_rate_nat\"], \"\")) + \"; Sex: \" + (isValid(datum[\"sex\"]) ? datum[\"sex\"] : \"\"+datum[\"sex\"]) + \"; Labour Force (sum): \" + (format(datum[\"lf_total\"], \",.0f\"))"
+              },
+              "x": {"scale": "x", "field": "year"},
+              "y": {"scale": "y", "field": "p_rate_nat"},
+              "defined": {
+                "signal": "isValid(datum[\"year\"]) && isFinite(+datum[\"year\"]) && isValid(datum[\"p_rate_nat\"]) && isFinite(+datum[\"p_rate_nat\"])"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "layer_1_marks",
+      "type": "symbol",
+      "style": ["point"],
+      "from": {"data": "data_0"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 1},
+          "fill": {"scale": "color", "field": "sex"},
+          "tooltip": {
+            "signal": "{\"Year\": isValid(datum[\"year\"]) ? datum[\"year\"] : \"\"+datum[\"year\"], \"Sex\": isValid(datum[\"sex\"]) ? datum[\"sex\"] : \"\"+datum[\"sex\"], \"Participation Rate (%)\": format(datum[\"p_rate_nat\"], \".1f\"), \"Labour Force (sum)\": format(datum[\"lf_total\"], \",.0f\")}"
+          },
+          "ariaRoleDescription": {"value": "point"},
+          "description": {
+            "signal": "\"Year: \" + (format(datum[\"year\"], \"\")) + \"; Participation Rate (%): \" + (format(datum[\"p_rate_nat\"], \"\")) + \"; Sex: \" + (isValid(datum[\"sex\"]) ? datum[\"sex\"] : \"\"+datum[\"sex\"]) + \"; Labour Force (sum): \" + (format(datum[\"lf_total\"], \",.0f\"))"
+          },
+          "x": {"scale": "x", "field": "year"},
+          "y": {"scale": "y", "field": "p_rate_nat"}
+        }
       }
     }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": {
+        "fields": [
+          {"data": "source_0", "field": "year"},
+          {"data": "data_0", "field": "year"}
+        ]
+      },
+      "range": [0, {"signal": "width"}],
+      "nice": true,
+      "zero": false
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": [40, 100],
+      "range": [{"signal": "height"}, 0],
+      "zero": false
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": ["female", "male"],
+      "range": ["#377eb8", "#ff7f0e"]
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "tickMinStep": 1,
+      "gridScale": "y",
+      "grid": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "tickCount": 13,
+      "values": [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],
+      "gridScale": "x",
+      "grid": true,
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "Year",
+      "tickMinStep": 1,
+      "labelFlush": true,
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "title": "Participation Rate (%)",
+      "tickCount": 13,
+      "values": [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],
+      "labelOverlap": true,
+      "zindex": 0
+    }
+  ],
+  "legends": [
+    {
+      "title": "Sex",
+      "stroke": "color",
+      "symbolType": "circle",
+      "fill": "color",
+      "encode": {"symbols": {"update": {"opacity": {"value": 1}}}}
+    }
+  ],
+  "config": {
+    "axis": {"labelFontSize": 11, "titleFontSize": 12},
+    "legend": {"titleFontSize": 12, "labelFontSize": 11},
+    "style": {"cell": {"stroke": null}}
   }
-  
+}

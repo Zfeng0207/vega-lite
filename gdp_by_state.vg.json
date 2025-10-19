@@ -17,7 +17,7 @@
     }
   ],
   "data": {
-    "url": "https://raw.githubusercontent.com/Zfeng0207/vega-lite/refs/heads/main/gdp_cleaned.csv",
+    "url": "https://raw.githubusercontent.com/Zfeng0207/vega-lite/refs/heads/main/data/gdp_cleaned.csv",
     "format": {
       "type": "csv",
       "parse": {
