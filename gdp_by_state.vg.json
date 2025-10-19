@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 850,
+  "height": 550,
+  "title": "GDP by State and Kind of Economic Activity (RM Million)",
+  "params": [
+    {
+      "name": "year_select",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 2019,
+        "max": 2022,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/Zfeng0207/vega-lite/refs/heads/main/gdp_cleaned.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "value rm million": "number"
+      }
+    }
+  },
+  "transform": [
+    { "filter": "datum.year == year_select" },
+    { "filter": "isValid(datum['value rm million']) && isFinite(+datum['value rm million'])" },
+    {
+      "filter": "isValid(datum.state) && isValid(datum['kind of economic activity'])"
+    }
+  ],
+  "mark": { "type": "bar" },
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": {
+        "op": "sum",
+        "field": "value rm million",
+        "order": "descending"
+      },
+      "axis": { "title": "State" }
+    },
+    "x": {
+      "aggregate": "sum",
+      "field": "value rm million",
+      "type": "quantitative",
+      "axis": { "title": "GDP (RM Million)" }
+    },
+    "color": {
+      "field": "kind of economic activity",
+      "type": "nominal",
+      "scale": { "scheme": "tableau10" },
+      "legend": {
+        "title": "Kind of Economic Activity",
+        "orient": "right",
+        "direction": "vertical",
+        "labelLimit": 300
+      },
+      "sort": {
+        "op": "sum",
+        "field": "value rm million",
+        "order": "descending"
+      }
+    },
+    "tooltip": [
+      { "field": "state", "title": "State" },
+      { "field": "kind of economic activity", "title": "Kind of Activity" },
+      {
+        "aggregate": "sum",
+        "field": "value rm million",
+        "title": "GDP (RM Million)",
+        "type": "quantitative",
+        "format": ",.0f"
+      },
+      { "field": "year", "title": "Year" }
+    ],
+    "order": {
+      "aggregate": "sum",
+      "field": "value rm million",
+      "sort": "descending"
+    }
+  },
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "labelFontSize": 11, "titleFontSize": 12 },
+    "legend": { "titleFontSize": 12, "labelFontSize": 11 }
+  }
+}

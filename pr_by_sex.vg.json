@@ -1,0 +1,101 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Malaysia Participation Rate by State and Sex (2019–2022)",
+    "width": 720,
+    "height": 650,
+  
+    "params": [
+      {
+        "name": "year_select",
+        "value": 2022,
+        "bind": {
+          "input": "range",
+          "min": 2019,
+          "max": 2022,
+          "step": 1,
+          "name": "Year: "
+        }
+      }
+    ],
+  
+    "data": {
+      "url": "https://raw.githubusercontent.com/Zfeng0207/vega-lite/refs/heads/main/lfs_state_sex_cleaned.csv",
+      "format": {
+        "type": "csv",
+        "parse": { "year": "number", "p_rate": "number" }
+      }
+    },
+  
+    "transform": [
+      { "filter": "datum.year == year_select" },
+      { "filter": "datum.sex == 'male' || datum.sex == 'female'" },
+      {
+        "calculate": "datum.sex == 'male' ? -datum.p_rate : datum.p_rate",
+        "as": "p_rate_signed"
+      },
+      {
+        "joinaggregate": [
+          { "op": "max", "field": "p_rate", "as": "p_rate_max" }
+        ],
+        "groupby": ["state"]
+      }
+    ],
+  
+    "layer": [
+      {
+        "mark": {
+          "type": "bar",
+          "height": { "band": 0.6 },
+          "cornerRadiusEnd": 2
+        },
+        "encoding": {
+          "y": {
+            "field": "state",
+            "type": "ordinal",
+            "sort": { "field": "p_rate_max", "order": "descending" },
+            "title": null
+          },
+          "x": {
+            "field": "p_rate_signed",
+            "type": "quantitative",
+            "scale": { "domain": [-100, 100] },  // extended to ±100
+            "axis": {
+              "title": "Participation Rate (%)",
+              "labelExpr": "abs(datum.value)",
+              "grid": true
+            }
+          },
+          "color": {
+            "field": "sex",
+            "type": "nominal",
+            "scale": {
+              "domain": ["female", "male"],
+              "range": ["#377eb8", "#ff7f0e"]
+            },
+            "title": "Sex"
+          },
+          "tooltip": [
+            { "field": "state", "title": "State" },
+            { "field": "sex", "title": "Sex" },
+            { "field": "p_rate", "title": "Participation Rate (%)", "format": ".1f" },
+            { "field": "year", "title": "Year" }
+          ]
+        }
+      },
+      {
+        "mark": { "type": "rule", "color": "#888", "strokeWidth": 1 },
+        "encoding": { "x": { "value": 0 } }
+      }
+    ],
+  
+    "config": {
+      "view": { "stroke": null },
+      "axis": {
+        "labelFontSize": 11,
+        "titleFontSize": 12,
+        "labelLimit": 150
+      },
+      "legend": { "titleFontSize": 12, "labelFontSize": 11 }
+    }
+  }
+  

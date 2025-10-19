@@ -1,0 +1,82 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Malaysia Employment Participation Rate by Sex, 2000–2022",
+    "width": 820,
+    "height": 420,
+  
+    "data": {
+      "url": "https://raw.githubusercontent.com/Zfeng0207/VegaLite/refs/heads/main/lfs_state_sex.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "date": "date",
+          "lf": "number",
+          "lf_outside": "number"
+        }
+      }
+    },
+  
+    "transform": [
+      { "calculate": "year(datum.date)", "as": "year" },
+      { "filter": "datum.year >= 2000 && datum.year <= 2022" },
+      { "filter": "datum.sex == 'male' || datum.sex == 'female'" },
+  
+      {
+        "aggregate": [
+          { "op": "sum", "field": "lf", "as": "lf_total" },
+          { "op": "sum", "field": "lf_outside", "as": "lf_out_total" }
+        ],
+        "groupby": ["year", "sex"]
+      },
+      {
+        "calculate": "(datum.lf_total / (datum.lf_total + datum.lf_out_total)) * 100",
+        "as": "p_rate_nat"
+      }
+    ],
+  
+    "mark": { "type": "line", "point": true, "interpolate": "monotone" },
+  
+    "encoding": {
+      "x": {
+        "field": "year",
+        "type": "quantitative",
+        "title": "Year",
+        "axis": { "tickMinStep": 1 }
+      },
+      "y": {
+        "field": "p_rate_nat",
+        "type": "quantitative",
+        "title": "Participation Rate (%)",
+        "scale": { "domain": [40, 100] },
+        "axis": { "tickCount": 13, "values": [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100] }
+      },
+      "color": {
+        "field": "sex",
+        "type": "nominal",
+        "scale": {
+          "domain": ["female", "male"],
+          "range": ["#377eb8", "#ff7f0e"]
+        },
+        "title": "Sex"
+      },
+      "tooltip": [
+        { "field": "year", "title": "Year" },
+        { "field": "sex", "title": "Sex" },
+        { "field": "p_rate_nat", "title": "Participation Rate (%)", "format": ".1f" },
+        { "field": "lf_total", "title": "Labour Force (sum)", "format": ",.0f" }
+      ]
+    },
+  
+    "config": {
+      "view": { "stroke": null },
+      "axis": {
+        "labelFontSize": 11,
+        "titleFontSize": 12
+      },
+      "legend": {
+        "titleFontSize": 12,
+        "labelFontSize": 11
+      }
+    }
+  }
+  
