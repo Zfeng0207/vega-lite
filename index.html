@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Vega libraries -->
+  <!-- Vega libraries (HTTPS to avoid mixed content on GitHub Pages) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -30,10 +30,15 @@
 
     body{
       font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-      /* scrolling background image, no color fallback */
-      background:url("data/background.png") repeat center top;
-      /* for local testing on your Mac, uncomment the next line: */
-      /* background:url("/Users/zfeng/Documents/vega lite/data/background.png") repeat center top; */
+
+      /* ✅ GitHub Pages–safe relative path (index.html at repo root) */
+      background:url("./data/background.png") repeat center top;
+
+      /* 🔁 If your index.html is inside /docs/, use this instead: */
+      /* background:url("../data/background.png") repeat center top; */
+
+      /* 🔸 Local-only absolute paths won’t work on Pages:
+         background:url("/Users/zfeng/Documents/vega lite/data/background.png") ... */
       background-size:cover;
       background-attachment:scroll;
       color:var(--ink);
@@ -93,9 +98,7 @@
       letter-spacing:0.2px;
     }
 
-    /* ===== Chart & caption stack =====
-       Make the chart "transparent card" and the caption a real card,
-       both aligned to the SAME width by occupying the section width. */
+    /* ===== Chart & caption stack ===== */
     .figure{display:block;max-width:100%;margin:0 auto;}
 
     h3.chart-title{
@@ -107,18 +110,18 @@
       letter-spacing:.1px;
     }
 
-    /* Visual card: transparent */
+    /* Visual container: transparent (no card) */
     .chart{
-      background:transparent;            /* transparent visual container */
-      border:none;                       /* no border/frame */
-      border-radius:0;                   /* no rounding to look "not a card" */
+      background:transparent;
+      border:none;
+      border-radius:0;
       min-height:420px;
       display:flex;align-items:center;justify-content:center;
-      margin-bottom:14px;                /* small gap before caption card */
-      padding:0;                         /* let Vega control its own internals */
+      margin-bottom:14px;
+      padding:0;
     }
 
-    /* Caption card: aligns to the same width because it’s full-width within the section */
+    /* Caption card: full width within the section (aligns with visual width) */
     .story{
       background:var(--panel);
       border:1px solid var(--line);
@@ -127,7 +130,7 @@
       color:#333;
       font-size:0.985rem;
       font-weight:500;
-      width:100%;                        /* match visual width */
+      width:100%;
       margin:0 auto;
       box-shadow:0 2px 8px rgba(0,0,0,0.06);
     }
@@ -228,7 +231,7 @@
 
   </div>
 
-  <!-- Script -->
-  <script src="js/script.js"></script>
+  <!-- Scripts (✅ relative paths) -->
+  <script src="./js/script.js"></script>
 </body>
 </html>
