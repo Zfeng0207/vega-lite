@@ -1,158 +1,235 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Malaysia GDP by Economic Activity (2019–2022)",
-    "width": 720,
-    "height": 720,
-    "data": {
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "background": "white",
+  "padding": 5,
+  "width": 720,
+  "height": 720,
+  "title": {
+    "text": "Malaysia GDP by Economic Activity (2019–2022)",
+    "frame": "group"
+  },
+  "style": "view",
+  "data": [
+    {
+      "name": "source_0",
       "url": "https://raw.githubusercontent.com/Zfeng0207/vega-lite/refs/heads/main/data/gdp_cleaned.csv",
       "format": {
         "type": "csv",
-        "parse": {"year": "number", "value rm million": "number"}
+        "parse": {"year": "number", "value rm million": "number"},
+        "delimiter": ","
+      },
+      "transform": [
+        {"type": "filter", "expr": "datum.year == year_select"},
+        {
+          "type": "filter",
+          "expr": "isValid(datum['value rm million']) && isFinite(+datum['value rm million'])"
+        },
+        {
+          "type": "joinaggregate",
+          "as": ["kind_total"],
+          "ops": ["sum"],
+          "fields": ["value rm million"],
+          "groupby": ["kind of economic activity"]
+        },
+        {
+          "type": "joinaggregate",
+          "as": ["grand_total"],
+          "ops": ["sum"],
+          "fields": ["value rm million"]
+        }
+      ]
+    },
+    {
+      "name": "data_0",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["kind of economic activity", "grand_total"],
+          "ops": ["sum"],
+          "fields": ["value rm million"],
+          "as": ["value_kind"]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.value_kind / datum.grand_total * 100",
+          "as": "pct_total_kind"
+        },
+        {
+          "type": "stack",
+          "groupby": [],
+          "field": "value_kind",
+          "sort": {
+            "field": ["kind of economic activity"],
+            "order": ["ascending"]
+          },
+          "as": ["value_kind_start", "value_kind_end"],
+          "offset": "zero"
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"value_kind\"]) && isFinite(+datum[\"value_kind\"])"
+        }
+      ]
+    },
+    {
+      "name": "data_1",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": [
+            "kind of economic activity",
+            "sub kind of economic activity",
+            "kind_total",
+            "grand_total"
+          ],
+          "ops": ["sum"],
+          "fields": ["value rm million"],
+          "as": ["value_sub"]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.value_sub / datum.kind_total * 100",
+          "as": "pct_parent_sub"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.value_sub / datum.grand_total * 100",
+          "as": "pct_total_sub"
+        },
+        {
+          "type": "stack",
+          "groupby": [],
+          "field": "value_sub",
+          "sort": {
+            "field": ["kind of economic activity", "value_sub"],
+            "order": ["ascending", "ascending"]
+          },
+          "as": ["value_sub_start", "value_sub_end"],
+          "offset": "zero"
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"value_sub\"]) && isFinite(+datum[\"value_sub\"])"
+        }
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "name": "year_select",
+      "value": 2022,
+      "bind": {
+        "input": "select",
+        "options": [2019, 2020, 2021, 2022],
+        "name": "Year: "
+      }
+    }
+  ],
+  "marks": [
+    {
+      "name": "layer_0_marks",
+      "type": "arc",
+      "style": ["arc"],
+      "from": {"data": "data_0"},
+      "encode": {
+        "update": {
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 1},
+          "innerRadius": {"value": 80},
+          "outerRadius": {"value": 160},
+          "fill": {"scale": "color", "field": "kind of economic activity"},
+          "tooltip": {
+            "signal": "{\"Kind\": isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"], \"GDP (RM Million)\": format(datum[\"value_kind\"], \",.0f\"), \"% of Total\": format(datum[\"pct_total_kind\"], \".1f\")}"
+          },
+          "description": {
+            "signal": "\"value_kind: \" + (format(datum[\"value_kind\"], \"\")) + \"; kind of economic activity: \" + (isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"]) + \"; Kind: \" + (isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"]) + \"; GDP (RM Million): \" + (format(datum[\"value_kind\"], \",.0f\")) + \"; % of Total: \" + (format(datum[\"pct_total_kind\"], \".1f\"))"
+          },
+          "x": {"signal": "width", "mult": 0.5},
+          "y": {"signal": "height", "mult": 0.5},
+          "startAngle": {"scale": "theta", "field": "value_kind_end"},
+          "endAngle": {"scale": "theta", "field": "value_kind_start"}
+        }
       }
     },
-    "params": [
-      {
-        "name": "year_select",
-        "value": 2022,
-        "bind": {
-          "input": "select",
-          "options": [2019, 2020, 2021, 2022],
-          "name": "Year: "
+    {
+      "name": "layer_1_marks",
+      "type": "arc",
+      "style": ["arc"],
+      "from": {"data": "data_1"},
+      "encode": {
+        "update": {
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 0.8},
+          "innerRadius": {"value": 160},
+          "outerRadius": {"value": 260},
+          "fill": {"scale": "color", "field": "kind of economic activity"},
+          "opacity": {"scale": "opacity", "field": "value_sub"},
+          "tooltip": {
+            "signal": "{\"Kind\": isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"], \"Sub Kind\": isValid(datum[\"sub kind of economic activity\"]) ? datum[\"sub kind of economic activity\"] : \"\"+datum[\"sub kind of economic activity\"], \"GDP (RM Million)\": format(datum[\"value_sub\"], \",.0f\"), \"% of Parent\": format(datum[\"pct_parent_sub\"], \".1f\"), \"% of Total\": format(datum[\"pct_total_sub\"], \".1f\")}"
+          },
+          "description": {
+            "signal": "\"value_sub: \" + (format(datum[\"value_sub\"], \"\")) + \"; kind of economic activity: \" + (isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"]) + \"; Kind: \" + (isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"]) + \"; Sub Kind: \" + (isValid(datum[\"sub kind of economic activity\"]) ? datum[\"sub kind of economic activity\"] : \"\"+datum[\"sub kind of economic activity\"]) + \"; GDP (RM Million): \" + (format(datum[\"value_sub\"], \",.0f\")) + \"; % of Parent: \" + (format(datum[\"pct_parent_sub\"], \".1f\")) + \"; % of Total: \" + (format(datum[\"pct_total_sub\"], \".1f\"))"
+          },
+          "x": {"signal": "width", "mult": 0.5},
+          "y": {"signal": "height", "mult": 0.5},
+          "startAngle": {"scale": "theta", "field": "value_sub_end"},
+          "endAngle": {"scale": "theta", "field": "value_sub_start"}
         }
       }
-    ],
-    "transform": [
-      {"filter": "datum.year == year_select"},
-      {"filter": "isValid(datum['value rm million']) && isFinite(+datum['value rm million'])"},
-      {
-        "joinaggregate": [
-          {"op": "sum", "field": "value rm million", "as": "kind_total"}
-        ],
-        "groupby": ["kind of economic activity"]
-      },
-      {
-        "joinaggregate": [
-          {"op": "sum", "field": "value rm million", "as": "grand_total"}
-        ]
-      }
-    ],
-    "layer": [
-      {
-        "transform": [
-          {
-            "aggregate": [
-              {"op": "sum", "field": "value rm million", "as": "value_kind"}
-            ],
-            "groupby": ["kind of economic activity", "grand_total"]
-          },
-          {"calculate": "datum.value_kind / datum.grand_total * 100", "as": "pct_total_kind"}
-        ],
-        "mark": {
-          "type": "arc",
-          "innerRadius": 80,
-          "outerRadius": 160,
-          "stroke": "white",
-          "strokeWidth": 1
-        },
-        "encoding": {
-          "theta": {"field": "value_kind", "type": "quantitative"},
-          "color": {
-            "field": "kind of economic activity",
-            "type": "nominal",
-            "scale": {
-              "domain": [
-                "Agriculture",
-                "Mining and Quarrying",
-                "Manufacturing",
-                "Construction",
-                "Services",
-                "Plus: Import duties"
-              ],
-              "range": [
-                "#1b9e77",
-                "#d95f02",
-                "#7570b3",
-                "#e7298a",
-                "#66a61e",
-                "#e6ab02"
-              ]
-            },
-            "legend": {"title": "Kind of Economic Activity"}
-          },
-          "tooltip": [
-            {"field": "kind of economic activity", "title": "Kind"},
-            {"field": "value_kind", "title": "GDP (RM Million)", "format": ",.0f"},
-            {"field": "pct_total_kind", "title": "% of Total", "format": ".1f"}
-          ]
-        }
-      },
-      {
-        "transform": [
-          {
-            "aggregate": [
-              {"op": "sum", "field": "value rm million", "as": "value_sub"}
-            ],
-            "groupby": [
-              "kind of economic activity",
-              "sub kind of economic activity",
-              "kind_total",
-              "grand_total"
-            ]
-          },
-          {"calculate": "datum.value_sub / datum.kind_total * 100", "as": "pct_parent_sub"},
-          {"calculate": "datum.value_sub / datum.grand_total * 100", "as": "pct_total_sub"}
-        ],
-        "mark": {
-          "type": "arc",
-          "innerRadius": 160,
-          "outerRadius": 260,
-          "stroke": "white",
-          "strokeWidth": 0.8
-        },
-        "encoding": {
-          "theta": {"field": "value_sub", "type": "quantitative"},
-          "color": {
-            "field": "kind of economic activity",
-            "type": "nominal",
-            "scale": {
-              "domain": [
-                "Agriculture",
-                "Mining and Quarrying",
-                "Manufacturing",
-                "Construction",
-                "Services",
-                "Plus: Import duties"
-              ],
-              "range": [
-                "#1b9e77",
-                "#d95f02",
-                "#7570b3",
-                "#e7298a",
-                "#66a61e",
-                "#e6ab02"
-              ]
-            },
-            "legend": null
-          },
-          "opacity": {
-            "field": "value_sub",
-            "type": "quantitative",
-            "legend": null,
-            "scale": {"domain": [0, 200000], "range": [0.45, 1]}
-          },
-          "tooltip": [
-            {"field": "kind of economic activity", "title": "Kind"},
-            {"field": "sub kind of economic activity", "title": "Sub Kind"},
-            {"field": "value_sub", "title": "GDP (RM Million)", "format": ",.0f"},
-            {"field": "pct_parent_sub", "title": "% of Parent", "format": ".1f"},
-            {"field": "pct_total_sub", "title": "% of Total", "format": ".1f"}
-          ]
-        }
-      }
-    ],
-    "config": {
-      "view": {"stroke": null},
-      "arc": {"cornerRadius": 0}
     }
-  }
-  
+  ],
+  "scales": [
+    {
+      "name": "theta",
+      "type": "linear",
+      "domain": {
+        "fields": [
+          {"data": "data_0", "field": "value_kind_start"},
+          {"data": "data_0", "field": "value_kind_end"},
+          {"data": "data_1", "field": "value_sub_start"},
+          {"data": "data_1", "field": "value_sub_end"}
+        ]
+      },
+      "range": [0, 6.283185307179586],
+      "zero": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": [
+        "Agriculture",
+        "Mining and Quarrying",
+        "Manufacturing",
+        "Construction",
+        "Services",
+        "Plus: Import duties"
+      ],
+      "range": [
+        "#1b9e77",
+        "#d95f02",
+        "#7570b3",
+        "#e7298a",
+        "#66a61e",
+        "#e6ab02"
+      ]
+    },
+    {
+      "name": "opacity",
+      "type": "linear",
+      "domain": [0, 200000],
+      "range": [0.45, 1],
+      "zero": true
+    }
+  ],
+  "legends": [
+    {
+      "title": "Kind of Economic Activity",
+      "fill": "color",
+      "symbolType": "circle",
+      "encode": {"symbols": {"update": {"stroke": {"value": "white"}}}}
+    }
+  ],
+  "config": {"style": {"cell": {"stroke": null}, "arc": {"cornerRadius": 0}}}
+}

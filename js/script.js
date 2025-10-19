@@ -17,14 +17,14 @@ function embed(where, specPath, opts = {}) {
   Adjust below to match.
   */
   
-  embed('#viz-choropleth', 'js/choropleth_map.vg.json');
+  embed('#viz-choropleth', './unemployment_rate_map.vg.json'); // choropleth map
   
-  embed('#viz-line',      'data/2000_to_2022_pr_by_sex.vg.json');      // national trend lines
+  embed('#viz-line',      './2000_to_2022_pr.vg.json');      // national trend lines
   // If your file is named differently, e.g. 'pr_by_sex.vg.json', change path accordingly
   
-  embed('#viz-radial',    'data/economic_activity_radial.vg.json');     // ring/sunburst GDP composition
+  embed('#viz-radial',    './economic_activity.vg.json');     // ring/sunburst GDP composition
   
-  embed('#viz-bars-pr',   'data/participation_state_sex_bars.vg.json'); // horizontal stacked bars by sex
+  embed('#viz-bars-pr',   'pr_by_sex.vg.json'); // horizontal stacked bars by sex
   
-  embed('#viz-bars-gdp',  'data/gdp_by_state.vg.json');                 // stacked GDP by state
+  embed('#viz-bars-gdp',  './gdp_by_state.vg.json');                 // stacked GDP by state
   

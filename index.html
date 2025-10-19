@@ -3,59 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Malaysia Water & Labour Storyboard</title>
+  <title>Malaysia Employment & Economic Structure Storyboard</title>
 
-  <!-- Vega libs -->
+  <!-- Google Fonts: classic/traditional vibe for the title -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Vega libraries -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css" />
   <style>
-    :root {
-      --ink:#2c3e50; --muted:#7f8c8d; --card:#ffffff; --panel:#f8f9fa; --line:#e9ecef;
+    :root{
+      --accent-yellow:#FFD700;
+      --title-blue:#002B7F;
+      --ink:#1a1a1a;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --panel:#f9fafb;
+      --line:#e5e7eb;
+      --shadow:0 4px 14px rgba(0,0,0,0.12);
     }
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      color:#333; background:#f5f5f5; line-height:1.55; padding:20px;
-    }
-    .container { max-width: 1200px; margin: 0 auto; }
-    header {
-      text-align:center; margin-bottom:32px; padding:36px 18px;
-      background:var(--card); border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,.06);
-    }
-    h1 { color:var(--ink); font-size:2.2rem; margin-bottom:6px; }
-    .subtitle { color:var(--muted); font-size:1rem; }
 
-    .section {
-      background:var(--card); border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,.06);
-      padding:28px; margin-bottom:26px;
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    body{
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      /* scrolling background image, no color fallback */
+      background:url("data/background.png") repeat center top;
+      /* for local testing on your Mac, uncomment the next line: */
+      /* background:url("/Users/zfeng/Documents/vega lite/data/background.png") repeat center top; */
+      background-size:cover;
+      background-attachment:scroll;
+      color:var(--ink);
+      line-height:1.6;
+      padding:20px;
     }
-    .section-title {
-      color:var(--ink); font-size:1.6rem; margin-bottom:16px;
-      border-bottom:2px solid #3498db; padding-bottom:8px;
+
+    .container{max-width:1200px;margin:0 auto;}
+
+    /* ===== Header without card ===== */
+    header{
+      text-align:center;
+      margin:8px 0 28px 0;
+      background:transparent;      /* remove card */
+      box-shadow:none;             /* remove shadow */
+      border-radius:0;             /* remove rounding */
+      padding:18px 10px;
     }
-    .story {
-      background:var(--panel); border:1px solid var(--line);
-      padding:18px; border-radius:10px; margin-bottom:18px;
-      color:#555; font-size:.97rem;
+    h1{
+      font-family:"Playfair Display",serif;   /* traditional/classic feel */
+      font-weight:800;
+      font-size:2.6rem;
+      line-height:1.2;
+      color:var(--title-blue);
+      letter-spacing:0.2px;
+      margin-bottom:10px;
     }
-    .chart {
-      background:#fff; border:1px solid var(--line);
-      border-radius:8px; padding:10px; min-height:420px;
-      display:flex; align-items:center; justify-content:center;
+    /* elegant gold underline motif under title */
+    .title-underline{
+      width:180px;height:4px;margin:10px auto 8px auto;
+      background:linear-gradient(90deg, transparent, var(--accent-yellow), transparent);
+      border-radius:999px;
     }
-    .chart-title {
-      text-align:center; color:var(--ink); font-weight:700; margin:10px 0 14px;
+    .subtitle{
+      color:#183153; /* deeper steel blue for contrast */
+      font-size:1.05rem;
+      font-weight:600;
+      text-wrap:balance;
     }
-    .two-col { display:flex; gap:22px; align-items:stretch; }
-    .two-col > div { flex:1; }
-    @media (max-width: 900px) {
-      .two-col { flex-direction:column; }
+
+    /* ===== Section card (keep for readability) ===== */
+    section.section{
+      background:rgba(255,255,255,0.92);
+      backdrop-filter:saturate(1.1) blur(0.6px);
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      padding:28px 24px;
+      margin-bottom:34px;
     }
-    footer { text-align:center; color:var(--muted); font-size:.9rem; margin-top:28px; }
+    .section-title{
+      font-size:1.55rem;
+      color:var(--title-blue);
+      font-weight:800;
+      margin-bottom:20px;
+      border-bottom:3px solid var(--accent-yellow);
+      padding-bottom:6px;
+      letter-spacing:0.2px;
+    }
+
+    /* ===== Chart & caption stack =====
+       Make the chart "transparent card" and the caption a real card,
+       both aligned to the SAME width by occupying the section width. */
+    .figure{display:block;max-width:100%;margin:0 auto;}
+
+    h3.chart-title{
+      font-size:1.15rem;
+      text-align:center;
+      color:#1f2937;
+      font-weight:700;
+      margin-bottom:12px;
+      letter-spacing:.1px;
+    }
+
+    /* Visual card: transparent */
+    .chart{
+      background:transparent;            /* transparent visual container */
+      border:none;                       /* no border/frame */
+      border-radius:0;                   /* no rounding to look "not a card" */
+      min-height:420px;
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:14px;                /* small gap before caption card */
+      padding:0;                         /* let Vega control its own internals */
+    }
+
+    /* Caption card: aligns to the same width because it’s full-width within the section */
+    .story{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:18px 20px;
+      color:#333;
+      font-size:0.985rem;
+      font-weight:500;
+      width:100%;                        /* match visual width */
+      margin:0 auto;
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    }
+    .story strong{font-weight:700;color:#111827}
+
+    footer{
+      text-align:center;color:#f3f4f6;
+      font-size:0.92rem;margin-top:44px;line-height:1.5;
+      text-shadow:0 1px 2px rgba(0,0,0,0.25);
+    }
+    footer a{color:#ffe58f;text-decoration:underline}
   </style>
 </head>
 
@@ -63,80 +146,89 @@
   <div class="container">
 
     <header>
-      <h1>Malaysia Water & Employment Storyboard</h1>
-      <p class="subtitle">Map first, then national trends → production mix → state comparisons</p>
+      <h1>Malaysia Employment & Economic Structure Storyboard</h1>
+      <div class="title-underline"></div>
+      <p class="subtitle">From participation to production — exploring how people and output connect across states.</p>
     </header>
 
-    <!-- 1) MAP AT THE TOP -->
+    <!-- 1) Choropleth -->
     <section class="section" id="sec-map">
-      <h2 class="section-title">Where Usage Peaks: A Geographic First Look</h2>
-      <div class="story">
-        Urbanised, high-population states (e.g., Selangor, Pulau Pinang) show the highest utilisation,
-        while smaller or less-dense states sit lower. This sets the scene: demographics and industry
-        clusters shape demand before policy even enters the picture.
-      </div>
-      <div class="chart-title">Per-State Indicator (selectable year/sex where available)</div>
-      <div id="viz-choropleth" class="chart"></div>
-    </section>
-
-    <!-- 2) NATIONAL TREND LINES -->
-    <section class="section" id="sec-trend">
-      <h2 class="section-title">Long-Run National Trend</h2>
-      <div class="story">
-        At the national level, participation trends show a steady long-run change
-        with a persistent gap between male and female series. This macro view helps
-        explain why some states depart from the average — structure and demographics matter.
-      </div>
-      <div class="chart-title">Malaysia Participation Rate by Sex, 2000–2022</div>
-      <div id="viz-line" class="chart"></div>
-    </section>
-
-    <!-- 3) PRODUCTION MIX (RING/RADIAL) -->
-    <section class="section" id="sec-radial">
-      <h2 class="section-title">What’s Driving Output: Composition Over Time</h2>
-      <div class="two-col">
-        <div>
-          <div class="chart-title">Malaysia GDP by Economic Activity (Selectable Year)</div>
-          <div id="viz-radial" class="chart"></div>
-        </div>
+      <h2 class="section-title">1. Who’s Working Where?</h2>
+      <div class="figure">
+        <h3 class="chart-title">Labour Force Participation Rate by State</h3>
+        <div id="viz-choropleth" class="chart"></div>
         <div class="story">
-          Services dominate, with manufacturing a strong second. Smaller slices (e.g., mining,
-          construction, agriculture) vary by cycle and shocks. This composition influences where
-          labour demand concentrates and which states accelerate faster during expansions.
+          Urban and industrialised states such as <strong>Selangor</strong>, <strong>Penang</strong>, and <strong>Kuala Lumpur</strong> show the highest participation,
+          driven by dense populations and strong job markets. In contrast, rural East Coast states record lower rates,
+          reflecting regional inequality in employment access.
         </div>
       </div>
     </section>
 
-    <!-- 4) STATE COMPARISON: PARTICIPATION BARS -->
+    <!-- 2) National Trend -->
+    <section class="section" id="sec-trend">
+      <h2 class="section-title">2. Gender Trends in Participation</h2>
+      <div class="figure">
+        <h3 class="chart-title">Malaysia Labour Force Participation by Sex, 2000–2022</h3>
+        <div id="viz-line" class="chart"></div>
+        <div class="story">
+          Male participation remains higher across decades, though the gender gap has gradually narrowed during economic expansions.
+          This reflects how education access, social norms, and supportive policies influence long-term inclusivity in Malaysia’s workforce.
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) GDP Composition -->
+    <section class="section" id="sec-radial">
+      <h2 class="section-title">3. What’s Driving Malaysia’s Output</h2>
+      <div class="figure">
+        <h3 class="chart-title">GDP by Kind of Economic Activity (2000–2022)</h3>
+        <div id="viz-radial" class="chart"></div>
+        <div class="story">
+          <strong>Services</strong> now dominate Malaysia’s GDP, while <strong>manufacturing</strong> remains a strong secondary pillar.
+          Agriculture, mining, and construction have gradually declined, marking a transition toward urban, skill-intensive sectors
+          that underpin modern economic growth.
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) State Participation -->
     <section class="section" id="sec-bars-pr">
-      <h2 class="section-title">State-Level Labour Participation</h2>
-      <div class="story">
-        Side-by-side male/female bars reveal states with narrower gaps (often urban/industrial hubs)
-        and those with wider gaps (rural or structurally different economies). Use the year slider to
-        see convergence or divergence through time.
+      <h2 class="section-title">4. Regional Gender Gaps</h2>
+      <div class="figure">
+        <h3 class="chart-title">Participation Rate by State and Sex (2019–2022)</h3>
+        <div id="viz-bars-pr" class="chart"></div>
+        <div class="story">
+          Urban and diversified states show smaller gender gaps, while rural regions remain more unequal.
+          Comparing across years reveals how industrial diversification and educational advancement contribute to more balanced labour participation.
+        </div>
       </div>
-      <div class="chart-title">Participation Rate by State and Sex (2019–2022)</div>
-      <div id="viz-bars-pr" class="chart"></div>
     </section>
 
-    <!-- 5) STATE COMPARISON: GDP STACKED BARS -->
+    <!-- 5) GDP by State -->
     <section class="section" id="sec-bars-gdp">
-      <h2 class="section-title">Where Output Concentrates</h2>
-      <div class="story">
-        Stacked GDP by state shows production heft: Selangor leads with large manufacturing and
-        services bases; Johor follows with strong industry; Sarawak reflects energy-linked activity.
-        These patterns align with the participation differences we observed earlier.
+      <h2 class="section-title">5. Where Economic Power Concentrates</h2>
+      <div class="figure">
+        <h3 class="chart-title">GDP by State & Economic Activity (RM Million, 2022)</h3>
+        <div id="viz-bars-gdp" class="chart"></div>
+        <div class="story">
+          <strong>Selangor</strong> dominates through a balanced services–manufacturing base,
+          followed by <strong>Johor</strong>’s industrial corridor and <strong>Sarawak</strong>’s energy sector.
+          These regional strengths correspond with higher participation rates, illustrating how diversified economies sustain both output and employment.
+        </div>
       </div>
-      <div class="chart-title">GDP by State & Kind of Economic Activity (RM Million)</div>
-      <div id="viz-bars-gdp" class="chart"></div>
     </section>
 
+    <!-- Footer -->
     <footer>
-      <p>Data: Official Malaysia statistics (2012–2022 where applicable). Visuals with Vega-Lite.</p>
+      <p><strong>Author:</strong> Loo Zfeng · <strong>Updated:</strong> 19 Oct 2025<br>
+      <strong>Data Sources:</strong> Department of Statistics Malaysia — Labour Force Survey & GDP by Kind of Economic Activity (2000–2022)<br>
+      <strong>Tools:</strong> Vega-Lite v5 · <strong>License:</strong> Educational use</p>
     </footer>
+
   </div>
 
-  <!-- Attach your embeds -->
+  <!-- Script -->
   <script src="js/script.js"></script>
 </body>
 </html>
