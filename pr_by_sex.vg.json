@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega/v6.json",
   "background": "white",
   "padding": 5,
-  "width": 720,
-  "height": 650,
+  "width": 1000,
+  "height": 400,
   "title": {
     "text": "Malaysia Participation Rate by State and Sex (2019–2022)",
     "frame": "group"

@@ -1,0 +1,89 @@
+/* ===== Theme vars ===== */
+:root{
+  --accent-yellow:#FFD700;
+  --title-blue:#002B7F;
+  --ink:#1a1a1a;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --panel:#f9fafb;
+  --line:#e5e7eb;
+  --shadow:0 4px 14px rgba(0,0,0,0.12);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  /* moved to /css/, so step out one level to / */
+  background:url("../data/background.png") repeat center top;
+  background-size:cover;background-attachment:scroll;color:var(--ink);line-height:1.6;padding:20px;
+}
+
+.container{max-width:1200px;margin:0 auto}
+
+/* ===== Header ===== */
+header{text-align:center;margin:8px 0 28px;background:transparent;box-shadow:none;border-radius:0;padding:18px 10px}
+h1{font-family:"Playfair Display",serif;font-weight:800;font-size:2.6rem;line-height:1.2;color:var(--title-blue);letter-spacing:.2px;margin-bottom:10px}
+.title-underline{width:180px;height:4px;margin:10px auto 8px;background:linear-gradient(90deg,transparent,var(--accent-yellow),transparent);border-radius:999px}
+.subtitle{color:#183153;font-size:1.05rem;font-weight:600;text-wrap:balance}
+
+/* ===== Section cards ===== */
+section.section{
+  background:rgba(255,255,255,.92);backdrop-filter:saturate(1.1) blur(.6px);
+  border-radius:14px;box-shadow:var(--shadow);padding:28px 24px;margin-bottom:34px
+}
+.section-title{
+  font-family:"Playfair Display",serif;font-size:1.55rem;color:var(--title-blue);
+  font-weight:800;margin-bottom:20px;border-bottom:3px solid var(--accent-yellow);
+  padding-bottom:6px;letter-spacing:.2px
+}
+
+/* General figure layout */
+.figure {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem; /* space between chart and caption */
+    flex-wrap: wrap; /* stacks vertically on small screens */
+  }
+  
+  /* Chart block */
+  .figure .chart {
+    flex: 1 1 60%;
+    min-width: 400px;
+  }
+  
+  /* Story / caption block */
+  .figure .story {
+    flex: 1 1 35%;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* For section 3 — caption on the left */
+  #sec-radial .figure {
+    flex-direction: row-reverse; /* caption first (left), chart right */
+  }
+  
+  /* For section 4 — caption on the right */
+  #sec-bars-pr .figure {
+    flex-direction: row; /* chart first (left), caption right */
+  }  
+
+/* ===== Charts & captions ===== */
+.figure{display:block;max-width:100%;margin:0 auto}
+h3.chart-title{font-family:"Playfair Display",serif;font-size:1.15rem;text-align:center;color:#1f2937;font-weight:700;margin-bottom:12px;letter-spacing:.1px}
+.chart{
+  background:transparent;border:none;border-radius:0;min-height:420px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;padding:0
+}
+.story{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;color:#333;
+  font-size:.985rem;font-weight:500;width:100%;margin:0 auto;box-shadow:0 2px 8px rgba(0,0,0,.06)
+}
+.story strong{font-weight:700;color:#111827}
+
+/* ===== Footer ===== */
+footer{text-align:center;color:#f3f4f6;font-size:.92rem;margin-top:44px;line-height:1.5;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+footer a{color:#ffe58f;text-decoration:underline}

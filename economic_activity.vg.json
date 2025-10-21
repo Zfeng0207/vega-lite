@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega/v6.json",
   "background": "white",
   "padding": 5,
-  "width": 720,
-  "height": 720,
+  "width": 900,
+  "height": 400,
   "title": {
     "text": "Malaysia GDP by Economic Activity (2019–2022)",
     "frame": "group"
@@ -68,7 +68,7 @@
         },
         {
           "type": "filter",
-          "expr": "isValid(datum[\"value_kind\"]) && isFinite(+datum[\"value_kind\"])"
+          "expr": "isValid(datum['value_kind']) && isFinite(+datum['value_kind'])"
         }
       ]
     },
@@ -107,26 +107,30 @@
             "order": ["ascending", "ascending"]
           },
           "as": ["value_sub_start", "value_sub_end"],
-          "offset": "zero"
+            "offset": "zero"
         },
         {
           "type": "filter",
-          "expr": "isValid(datum[\"value_sub\"]) && isFinite(+datum[\"value_sub\"])"
+          "expr": "isValid(datum['value_sub']) && isFinite(+datum['value_sub'])"
         }
       ]
     }
   ],
+
   "signals": [
     {
       "name": "year_select",
       "value": 2022,
       "bind": {
-        "input": "select",
-        "options": [2019, 2020, 2021, 2022],
+        "input": "range",
+        "min": 2019,
+        "max": 2022,
+        "step": 1,
         "name": "Year: "
       }
     }
   ],
+
   "marks": [
     {
       "name": "layer_0_marks",
@@ -141,10 +145,7 @@
           "outerRadius": {"value": 160},
           "fill": {"scale": "color", "field": "kind of economic activity"},
           "tooltip": {
-            "signal": "{\"Kind\": isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"], \"GDP (RM Million)\": format(datum[\"value_kind\"], \",.0f\"), \"% of Total\": format(datum[\"pct_total_kind\"], \".1f\")}"
-          },
-          "description": {
-            "signal": "\"value_kind: \" + (format(datum[\"value_kind\"], \"\")) + \"; kind of economic activity: \" + (isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"]) + \"; Kind: \" + (isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"]) + \"; GDP (RM Million): \" + (format(datum[\"value_kind\"], \",.0f\")) + \"; % of Total: \" + (format(datum[\"pct_total_kind\"], \".1f\"))"
+            "signal": "{\"Kind\": datum['kind of economic activity'], \"GDP (RM Million)\": format(datum['value_kind'], ',.0f'), \"% of Total\": format(datum['pct_total_kind'], '.1f')}"
           },
           "x": {"signal": "width", "mult": 0.5},
           "y": {"signal": "height", "mult": 0.5},
@@ -167,10 +168,7 @@
           "fill": {"scale": "color", "field": "kind of economic activity"},
           "opacity": {"scale": "opacity", "field": "value_sub"},
           "tooltip": {
-            "signal": "{\"Kind\": isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"], \"Sub Kind\": isValid(datum[\"sub kind of economic activity\"]) ? datum[\"sub kind of economic activity\"] : \"\"+datum[\"sub kind of economic activity\"], \"GDP (RM Million)\": format(datum[\"value_sub\"], \",.0f\"), \"% of Parent\": format(datum[\"pct_parent_sub\"], \".1f\"), \"% of Total\": format(datum[\"pct_total_sub\"], \".1f\")}"
-          },
-          "description": {
-            "signal": "\"value_sub: \" + (format(datum[\"value_sub\"], \"\")) + \"; kind of economic activity: \" + (isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"]) + \"; Kind: \" + (isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"]) + \"; Sub Kind: \" + (isValid(datum[\"sub kind of economic activity\"]) ? datum[\"sub kind of economic activity\"] : \"\"+datum[\"sub kind of economic activity\"]) + \"; GDP (RM Million): \" + (format(datum[\"value_sub\"], \",.0f\")) + \"; % of Parent: \" + (format(datum[\"pct_parent_sub\"], \".1f\")) + \"; % of Total: \" + (format(datum[\"pct_total_sub\"], \".1f\"))"
+            "signal": "{\"Kind\": datum['kind of economic activity'], \"Sub Kind\": datum['sub kind of economic activity'], \"GDP (RM Million)\": format(datum['value_sub'], ',.0f'), \"% of Parent\": format(datum['pct_parent_sub'], '.1f'), \"% of Total\": format(datum['pct_total_sub'], '.1f')}"
           },
           "x": {"signal": "width", "mult": 0.5},
           "y": {"signal": "height", "mult": 0.5},
@@ -180,6 +178,7 @@
       }
     }
   ],
+
   "scales": [
     {
       "name": "theta",
@@ -223,13 +222,40 @@
       "zero": true
     }
   ],
+
   "legends": [
     {
       "title": "Kind of Economic Activity",
       "fill": "color",
+      "orient": "right",
       "symbolType": "circle",
-      "encode": {"symbols": {"update": {"stroke": {"value": "white"}}}}
+      "symbolSize": 300,
+      "symbolStrokeWidth": 2,
+      "padding": 12,
+      "titleFontSize": 18,
+      "titleFont": "Inter",
+      "titlePadding": 8,
+      "labelFont": "Inter",
+      "labelFontSize": 14,
+      "labelLimit": 240,
+      "encode": {
+        "title": {
+          "update": {"fontWeight": {"value": "600"}}
+        },
+        "labels": {
+          "update": {"fill": {"value": "#222"}}
+        },
+        "symbols": {
+          "update": {"stroke": {"value": "white"}}
+        }
+      }
     }
   ],
-  "config": {"style": {"cell": {"stroke": null}, "arc": {"cornerRadius": 0}}}
+
+  "config": {
+    "style": {
+      "cell": {"stroke": null},
+      "arc": {"cornerRadius": 0}
+    }
+  }
 }

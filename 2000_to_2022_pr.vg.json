@@ -1,81 +1,100 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Malaysia Participation Rate (p_rate) by Sex — National, 2000–2022",
-  "width": 820,
-  "height": 420,
-
+  "background": "white",
+  "autosize": {"type": "pad", "contains": "padding"},
   "data": {
     "url": "https://raw.githubusercontent.com/Zfeng0207/VegaLite/refs/heads/main/lfs_state_sex.csv",
     "format": {
       "type": "csv",
-      "parse": {
-        "date": "date",
-        "lf": "number",
-        "lf_outside": "number"
-      }
+      "parse": {"date": "date", "lf": "number", "lf_outside": "number"}
     }
   },
-
   "transform": [
-    { "calculate": "year(datum.date)", "as": "year" },
-    { "filter": "datum.year >= 2000 && datum.year <= 2022" },
-    { "filter": "datum.sex == 'male' || datum.sex == 'female'" },
-
+    {"calculate": "year(datum.date)", "as": "year"},
+    {"filter": "datum.sex == 'male' || datum.sex == 'female'"},
     {
       "aggregate": [
-        { "op": "sum", "field": "lf", "as": "lf_total" },
-        { "op": "sum", "field": "lf_outside", "as": "lf_out_total" }
+        {"op": "sum", "field": "lf", "as": "lf_total"},
+        {"op": "sum", "field": "lf_outside", "as": "lf_out_total"}
       ],
       "groupby": ["year", "sex"]
     },
     {
       "calculate": "(datum.lf_total / (datum.lf_total + datum.lf_out_total)) * 100",
       "as": "p_rate_nat"
+    },
+    {"calculate": "datetime(datum.year, 0, 1)", "as": "yearDate"}
+  ],
+
+  "hconcat": [
+    {
+      "width": 650,
+      "height": 500,
+      "title": "Malaysia Participation Rate by Sex",
+      "mark": {"type": "line", "interpolate": "monotone", "strokeWidth": 3},
+      "encoding": {
+        "x": {
+          "field": "yearDate",
+          "type": "temporal",
+          "scale": {"domain": {"param": "brush"}},
+          "axis": {"format": "%Y", "title": "", "tickCount": 10, "labelFontSize": 14}
+        },
+        "y": {
+          "field": "p_rate_nat",
+          "type": "quantitative",
+          "scale": {"domain": [40, 100]},
+          "axis": {
+            "title": "Participation Rate (%)",
+            "tickCount": 13,
+            "labelFontSize": 14,
+            "titleFontSize": 16
+          }
+        },
+        "color": {
+          "field": "sex",
+          "type": "nominal",
+          "scale": {"domain": ["female", "male"], "range": ["#377eb8", "#ff7f0e"]},
+          "title": "Sex"
+        },
+        "tooltip": [
+          {"field": "year", "type": "quantitative", "title": "Year"},
+          {"field": "sex", "type": "nominal", "title": "Sex"},
+          {"field": "p_rate_nat", "type": "quantitative", "title": "Participation Rate (%)", "format": ".1f"},
+          {"field": "lf_total", "type": "quantitative", "title": "Labour Force (sum)", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "width": 380,
+      "height": 500,
+      "mark": {"type": "line", "interpolate": "monotone", "strokeWidth": 2},
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+      ],
+      "encoding": {
+        "x": {
+          "field": "yearDate",
+          "type": "temporal",
+          "axis": {"format": "%Y", "title": "", "labelFontSize": 12}
+        },
+        "y": {
+          "field": "p_rate_nat",
+          "type": "quantitative",
+          "axis": {"tickCount": 5, "grid": true, "title": "", "labelFontSize": 12}
+        },
+        "color": {
+          "field": "sex",
+          "type": "nominal",
+          "scale": {"domain": ["female", "male"], "range": ["#377eb8", "#ff7f0e"]},
+          "legend": null
+        }
+      }
     }
   ],
 
-  "mark": { "type": "line", "point": true, "interpolate": "monotone" },
-
-  "encoding": {
-    "x": {
-      "field": "year",
-      "type": "quantitative",
-      "title": "Year",
-      "axis": { "tickMinStep": 1 }
-    },
-    "y": {
-      "field": "p_rate_nat",
-      "type": "quantitative",
-      "title": "Participation Rate (%)",
-      "scale": { "domain": [40, 100] },
-      "axis": { "tickCount": 13, "values": [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100] }
-    },
-    "color": {
-      "field": "sex",
-      "type": "nominal",
-      "scale": {
-        "domain": ["female", "male"],
-        "range": ["#377eb8", "#ff7f0e"]
-      },
-      "title": "Sex"
-    },
-    "tooltip": [
-      { "field": "year", "title": "Year" },
-      { "field": "sex", "title": "Sex" },
-      { "field": "p_rate_nat", "title": "Participation Rate (%)", "format": ".1f" },
-      { "field": "lf_total", "title": "Labour Force (sum)", "format": ",.0f" }
-    ]
-  },
-
   "config": {
-    "view": { "stroke": null },
-    "axis": {
-      "labelFontSize": 11,
-      "titleFontSize": 12
-    },
-    "legend": {
-      "titleFontSize": 12,
-      "labelFontSize": 11
-    }
+    "axis": {"labelFontSize": 14, "titleFontSize": 16},
+    "legend": {"titleFontSize": 14, "labelFontSize": 13},
+    "style": {"cell": {"stroke": null}}
   }
 }
