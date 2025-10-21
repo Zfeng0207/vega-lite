@@ -67,6 +67,13 @@
     {
       "width": 380,
       "height": 500,
+      "title": {
+        "text": "Brush here to zoom the left chart",
+        "subtitle": "Drag across years to filter",
+        "anchor": "start",
+        "fontSize": 14,
+        "subtitleFontSize": 12
+      },
       "mark": {"type": "line", "interpolate": "monotone", "strokeWidth": 2},
       "params": [
         {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}

@@ -105,7 +105,14 @@
       "translate": [400, 250]
     }
   ],
-  "scales": [ { "name": "color", "type": "sequential", "domain": [40,85], "range": ["#d73027", "#ffffbf", "#1a9850"], "clamp": true }
+  "scales": [
+    {
+      "name": "color",
+      "type": "sequential",
+      "domain": [40, 85],
+      "range": ["#e5f5e0", "#31a354"],
+      "clamp": true
+    }
   ],
 "legends": [
   {

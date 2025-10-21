@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Malaysia Employment & Economic Structure Storyboard</title>
 
-  <!-- Google Fonts: classic/traditional vibe for the title -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Vega libraries (HTTPS to avoid mixed content on GitHub Pages) -->
+  <!-- Vega libraries -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -24,21 +24,14 @@
       --panel:#f9fafb;
       --line:#e5e7eb;
       --shadow:0 4px 14px rgba(0,0,0,0.12);
+      --link:#0f62fe;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
 
     body{
       font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-
-      /* ✅ GitHub Pages–safe relative path (index.html at repo root) */
       background:url("./data/background.png") repeat center top;
-
-      /* 🔁 If your index.html is inside /docs/, use this instead: */
-      /* background:url("../data/background.png") repeat center top; */
-
-      /* 🔸 Local-only absolute paths won’t work on Pages:
-         background:url("/Users/zfeng/Documents/vega lite/data/background.png") ... */
       background-size:cover;
       background-attachment:scroll;
       color:var(--ink);
@@ -48,17 +41,17 @@
 
     .container{max-width:1200px;margin:0 auto;}
 
-    /* ===== Header without card ===== */
+    /* ===== Header ===== */
     header{
       text-align:center;
       margin:8px 0 28px 0;
-      background:transparent;      /* remove card */
-      box-shadow:none;             /* remove shadow */
-      border-radius:0;             /* remove rounding */
+      background:transparent;
+      box-shadow:none;
+      border-radius:0;
       padding:18px 10px;
     }
     h1{
-      font-family:"Playfair Display",serif;   /* traditional/classic feel */
+      font-family:"Playfair Display",serif;
       font-weight:800;
       font-size:2.6rem;
       line-height:1.2;
@@ -66,20 +59,19 @@
       letter-spacing:0.2px;
       margin-bottom:10px;
     }
-    /* elegant gold underline motif under title */
     .title-underline{
       width:180px;height:4px;margin:10px auto 8px auto;
       background:linear-gradient(90deg, transparent, var(--accent-yellow), transparent);
       border-radius:999px;
     }
     .subtitle{
-      color:#183153; /* deeper steel blue for contrast */
+      color:#183153;
       font-size:1.05rem;
       font-weight:600;
       text-wrap:balance;
     }
 
-    /* ===== Section card (keep for readability) ===== */
+    /* ===== Section card ===== */
     section.section{
       background:rgba(255,255,255,0.92);
       backdrop-filter:saturate(1.1) blur(0.6px);
@@ -98,7 +90,7 @@
       letter-spacing:0.2px;
     }
 
-    /* ===== Chart & caption stack ===== */
+    /* ===== Charts & captions ===== */
     .figure{display:block;max-width:100%;margin:0 auto;}
 
     h3.chart-title{
@@ -110,7 +102,6 @@
       letter-spacing:.1px;
     }
 
-    /* Visual container: transparent (no card) */
     .chart{
       background:transparent;
       border:none;
@@ -121,27 +112,37 @@
       padding:0;
     }
 
-    /* Caption card: full width within the section (aligns with visual width) */
+    /* ✨ Captions: ≤10 words + larger font */
     .story{
       background:var(--panel);
       border:1px solid var(--line);
       border-radius:12px;
       padding:18px 20px;
       color:#333;
-      font-size:0.985rem;
-      font-weight:500;
+      font-size:1.15rem;         /* enlarged from ~0.985rem */
+      line-height:1.5;
+      font-weight:600;           /* stronger weight for short captions */
       width:100%;
       margin:0 auto;
       box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      text-align:center;         /* short captions look cleaner centered */
     }
-    .story strong{font-weight:700;color:#111827}
+    .story strong{font-weight:800;color:#111827}
 
-    footer{
-      text-align:center;color:#f3f4f6;
-      font-size:0.92rem;margin-top:44px;line-height:1.5;
-      text-shadow:0 1px 2px rgba(0,0,0,0.25);
+    /* ===== Footer card with good contrast ===== */
+    footer.footer-card{
+      background:var(--card);
+      color:var(--ink);
+      border:1px solid var(--line);
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      padding:18px 20px;
+      margin:44px auto 8px auto;
     }
-    footer a{color:#ffe58f;text-decoration:underline}
+    footer.footer-card p{margin:6px 0}
+    footer a{color:var(--link); text-decoration:underline}
+    footer .source-list{display:flex;flex-wrap:wrap;gap:10px}
+    footer .source-list a{white-space:nowrap}
   </style>
 </head>
 
@@ -149,7 +150,7 @@
   <div class="container">
 
     <header>
-      <h1>Malaysia Employment & Economic Structure Storyboard</h1>
+      <h1>Malaysia Employment & Economic Structure</h1>
       <div class="title-underline"></div>
       <p class="subtitle">From participation to production — exploring how people and output connect across states.</p>
     </header>
@@ -161,79 +162,92 @@
         <h3 class="chart-title">Labour Force Participation Rate by State</h3>
         <div id="viz-choropleth" class="chart"></div>
         <div class="story">
-          Urban and industrialised states such as <strong>Selangor</strong>, <strong>Penang</strong>, and <strong>Kuala Lumpur</strong> show the highest participation,
-          driven by dense populations and strong job markets. In contrast, rural East Coast states record lower rates,
-          reflecting regional inequality in employment access.
+          Urban states lead; rural East Coast trails.
         </div>
       </div>
     </section>
 
-  <!-- 2) National Trend -->
-  <section class="section" id="sec-trend">
-    <h2 class="section-title">2. Gender Trends in Participation</h2>
-
-    <div class="trend-layout">
-      <div class="trend-chart">
-        <div id="viz-line" class="chart"></div>
-      </div>
-
-      <div class="trend-story">
-        <div class="story">
-          Male participation remains higher across decades, though the gender gap has gradually narrowed during economic expansions.
-          This reflects how education access, social norms, and supportive policies influence long-term inclusivity in Malaysia’s workforce.
+    <!-- 2) National Trend -->
+    <section class="section" id="sec-trend">
+      <h2 class="section-title">2. Gender Trends in Participation</h2>
+      <div class="trend-layout">
+        <div class="trend-chart">
+          <div id="viz-line" class="chart"></div>
+        </div>
+        <div class="trend-story">
+          <div class="story">
+            Gender gap narrows gradually during expansions.
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-    <!-- 3) GDP Composition -->
-    <section class="section" id="sec-radial">
-      <h2 class="section-title">3. What’s Driving Malaysia’s Output</h2>
+    <!-- 3) Bubble -->
+    <section class="section" id="sec-bubble">
+      <h2 class="section-title">3. Participation, Population & GDP by State</h2>
       <div class="figure">
-        <div id="viz-radial" class="chart"></div>
+        <h3 class="chart-title">Participation Rate vs Population — Bubble Size = GDP</h3>
+        <div id="viz-bubble" class="chart"></div>
         <div class="story">
-          <strong>Services</strong> now dominate Malaysia’s GDP, while <strong>manufacturing</strong> remains a strong secondary pillar.
-          Agriculture, mining, and construction have gradually declined, marking a transition toward urban, skill-intensive sectors
-          that underpin modern economic growth.
+          High participation and population drive GDP.
         </div>
       </div>
     </section>
 
-    <!-- 4) State Participation -->
+    <!-- 4) State Participation (Bars) -->
     <section class="section" id="sec-bars-pr">
       <h2 class="section-title">4. Regional Gender Gaps</h2>
       <div class="figure">
         <div id="viz-bars-pr" class="chart"></div>
         <div class="story">
-          Urban and diversified states show smaller gender gaps, while rural regions remain more unequal.
-          Comparing across years reveals how industrial diversification and educational advancement contribute to more balanced labour participation.
+          Urban regions show smaller gender gaps.
         </div>
       </div>
     </section>
 
-    <!-- 5) GDP by State -->
+    <!-- 5) GDP by State (Bars) -->
     <section class="section" id="sec-bars-gdp">
       <h2 class="section-title">5. Where Economic Power Concentrates</h2>
       <div class="figure">
         <div id="viz-bars-gdp" class="chart"></div>
         <div class="story">
-          <strong>Selangor</strong> dominates through a balanced services–manufacturing base,
-          followed by <strong>Johor</strong>’s industrial corridor and <strong>Sarawak</strong>’s energy sector.
-          These regional strengths correspond with higher participation rates, illustrating how diversified economies sustain both output and employment.
+          Selangor leads; Johor, Sarawak follow.
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) GDP Composition (Donut/Radial) -->
+    <section class="section" id="sec-radial">
+      <h2 class="section-title">6. What’s Driving Malaysia’s Output</h2>
+      <div class="figure">
+        <div id="viz-radial" class="chart"></div>
+        <div class="story">
+          Services dominate; manufacturing remains strong.
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-      <p><strong>Author:</strong> Loo Zfeng · <strong>Updated:</strong> 19 Oct 2025<br>
-      <strong>Data Sources:</strong> Department of Statistics Malaysia — Labour Force Survey & GDP by Kind of Economic Activity (2000–2022)<br>
-      <strong>Tools:</strong> Vega-Lite v5 · <strong>License:</strong> Educational use</p>
+    <footer class="footer-card">
+      <p><strong>Author:</strong> Loo Zfeng · <strong>Updated:</strong> 19 Oct 2025</p>
+      <p><strong>Data Sources:</strong></p>
+      <div class="source-list">
+        <!-- Primary sources -->
+        <a href="https://www.dosm.gov.my/" target="_blank" rel="noopener">DOSM Homepage</a>
+        <a href="https://www.dosm.gov.my/portal-main/release-content" target="_blank" rel="noopener">DOSM Releases</a>
+        <a href="https://www.dosm.gov.my/portal-main/release-content/labour-force" target="_blank" rel="noopener">Labour Force Survey</a>
+        <a href="https://www.dosm.gov.my/portal-main/release-content/gross-domestic-product" target="_blank" rel="noopener">GDP by Economic Activity</a>
+        <!-- Files used in this storyboard -->
+        <a href="https://archive.data.gov.my/data/dataset/employed-person-by-sex-and-state-malaysia" target="_blank" rel="noopener">Employability Table</a>
+        <a href="https://open.dosm.gov.my/data-catalogue/gdp_state_real_supply" target="_blank" rel="noopener">GDP Table</a>
+        <a href="https://open.dosm.gov.my/data-catalogue/population_state" target="_blank" rel="noopener">Population Table</a>
+      </div>
+      <p><strong>Tools:</strong> Vega-Lite v5 · <strong>License:</strong> Educational use</p>
     </footer>
 
   </div>
 
-  <!-- Scripts (✅ relative paths) -->
+  <!-- Scripts -->
   <script src="./js/script.js"></script>
 </body>
 </html>
