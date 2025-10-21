@@ -2,59 +2,31 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "background": "white",
   "padding": 5,
-  "width": 950,
-  "height": 520,
+  "width": 850,
+  "height": 550,
   "title": {
-    "text": "Malaysia Economic Landscape — Participation, Population & GDP by State",
-    "anchor": "start",
-    "fontSize": 18
+    "text": "GDP by State and Kind of Economic Activity (RM Million)",
+    "frame": "group"
   },
   "style": "cell",
   "data": [
     {
-      "name": "source_1",
-      "url": "https://raw.githubusercontent.com/Zfeng0207/vega-lite/refs/heads/main/data/lfs_state_sex_cleaned.csv",
-      "format": {"type": "csv", "delimiter": ","}
-    },
-    {
-      "name": "source_2",
-      "url": "https://raw.githubusercontent.com/Zfeng0207/vega-lite/refs/heads/main/data/gdp_cleaned.csv",
-      "format": {"type": "csv", "delimiter": ","}
-    },
-    {
       "name": "source_0",
-      "url": "https://raw.githubusercontent.com/Zfeng0207/vega-lite/refs/heads/main/data/population_state.csv",
+      "url": "https://raw.githubusercontent.com/Zfeng0207/vega-lite/refs/heads/main/data/gdp_cleaned.csv",
       "format": {
         "type": "csv",
-        "parse": {"date": "date", "population": "number"},
+        "parse": {"year": "number", "value rm million": "number"},
         "delimiter": ","
       },
       "transform": [
-        {"type": "formula", "expr": "year(datum.date)", "as": "year"},
-        {"type": "filter", "expr": "datum.year == 2022"},
+        {"type": "filter", "expr": "datum.year == year_select"},
         {
           "type": "filter",
-          "expr": "datum.sex == 'both' && datum.age == 'overall' && datum.ethnicity == 'overall'"
-        },
-        {
-          "type": "lookup",
-          "from": "source_1",
-          "key": "state",
-          "fields": ["state"],
-          "values": ["p_rate"],
-          "as": ["p_rate"]
-        },
-        {
-          "type": "lookup",
-          "from": "source_2",
-          "key": "state",
-          "fields": ["state"],
-          "values": ["value rm million"],
-          "as": ["gdp"]
+          "expr": "isValid(datum['value rm million']) && isFinite(+datum['value rm million'])"
         },
         {
           "type": "filter",
-          "expr": "isValid(datum.p_rate) && isValid(datum.gdp)"
+          "expr": "isValid(datum.state) && isValid(datum['kind of economic activity'])"
         }
       ]
     },
@@ -63,67 +35,60 @@
       "source": "source_0",
       "transform": [
         {
-          "type": "filter",
-          "expr": "isValid(datum[\"p_rate\"]) && isFinite(+datum[\"p_rate\"]) && isValid(datum[\"population\"]) && isFinite(+datum[\"population\"]) && isValid(datum[\"gdp\"]) && isFinite(+datum[\"gdp\"])"
-        }
-      ]
-    },
-    {
-      "name": "data_1",
-      "source": "source_0",
-      "transform": [
+          "type": "aggregate",
+          "groupby": ["state", "kind of economic activity", "year"],
+          "ops": ["sum"],
+          "fields": ["value rm million"],
+          "as": ["sum_value rm million"]
+        },
+        {
+          "type": "stack",
+          "groupby": ["state"],
+          "field": "sum_value rm million",
+          "sort": {"field": ["sum_value rm million"], "order": ["descending"]},
+          "as": ["sum_value rm million_start", "sum_value rm million_end"],
+          "offset": "zero"
+        },
         {
           "type": "filter",
-          "expr": "isValid(datum[\"p_rate\"]) && isFinite(+datum[\"p_rate\"]) && isValid(datum[\"population\"]) && isFinite(+datum[\"population\"])"
+          "expr": "isValid(datum[\"sum_value rm million\"]) && isFinite(+datum[\"sum_value rm million\"])"
         }
       ]
     }
   ],
+  "signals": [
+    {
+      "name": "year_select",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 2019,
+        "max": 2022,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
   "marks": [
     {
-      "name": "layer_0_marks",
-      "type": "symbol",
-      "style": ["circle"],
+      "name": "marks",
+      "type": "rect",
+      "style": ["bar"],
       "from": {"data": "data_0"},
       "encode": {
         "update": {
-          "opacity": {"value": 0.9},
-          "stroke": {"value": "white"},
-          "strokeWidth": {"value": 0.8},
-          "fill": {"scale": "color", "field": "state"},
+          "fill": {"scale": "color", "field": "kind of economic activity"},
           "tooltip": {
-            "signal": "{\"State\": isValid(datum[\"state\"]) ? datum[\"state\"] : \"\"+datum[\"state\"], \"Participation (%)\": format(datum[\"p_rate\"], \".1f\"), \"Population (k)\": format(datum[\"population\"], \".1f\"), \"GDP (RM mil)\": format(datum[\"gdp\"], \",.0f\")}"
+            "signal": "{\"State\": isValid(datum[\"state\"]) ? datum[\"state\"] : \"\"+datum[\"state\"], \"Kind of Activity\": isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"], \"GDP (RM Million)\": format(datum[\"sum_value rm million\"], \",.0f\"), \"Year\": isValid(datum[\"year\"]) ? datum[\"year\"] : \"\"+datum[\"year\"]}"
           },
-          "ariaRoleDescription": {"value": "circle"},
+          "ariaRoleDescription": {"value": "bar"},
           "description": {
-            "signal": "\"Participation Rate (%): \" + (format(datum[\"p_rate\"], \"\")) + \"; Population (thousand): \" + (format(datum[\"population\"], \"\")) + \"; State: \" + (isValid(datum[\"state\"]) ? datum[\"state\"] : \"\"+datum[\"state\"]) + \"; GDP (RM million): \" + (format(datum[\"gdp\"], \".2s\")) + \"; Participation (%): \" + (format(datum[\"p_rate\"], \".1f\")) + \"; Population (k): \" + (format(datum[\"population\"], \".1f\")) + \"; GDP (RM mil): \" + (format(datum[\"gdp\"], \",.0f\"))"
+            "signal": "\"Sum of value rm million: \" + (format(datum[\"sum_value rm million\"], \"\")) + \"; state: \" + (isValid(datum[\"state\"]) ? datum[\"state\"] : \"\"+datum[\"state\"]) + \"; kind of economic activity: \" + (isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"]) + \"; State: \" + (isValid(datum[\"state\"]) ? datum[\"state\"] : \"\"+datum[\"state\"]) + \"; Kind of Activity: \" + (isValid(datum[\"kind of economic activity\"]) ? datum[\"kind of economic activity\"] : \"\"+datum[\"kind of economic activity\"]) + \"; GDP (RM Million): \" + (format(datum[\"sum_value rm million\"], \",.0f\")) + \"; Year: \" + (isValid(datum[\"year\"]) ? datum[\"year\"] : \"\"+datum[\"year\"])"
           },
-          "x": {"scale": "x", "field": "p_rate"},
-          "y": {"scale": "y", "field": "population"},
-          "size": {"scale": "size", "field": "gdp"},
-          "shape": {"value": "circle"}
-        }
-      }
-    },
-    {
-      "name": "layer_1_marks",
-      "type": "text",
-      "style": ["text"],
-      "from": {"data": "data_1"},
-      "encode": {
-        "update": {
-          "align": {"value": "center"},
-          "dy": {"value": -10},
-          "fontSize": {"value": 11},
-          "fontWeight": {"value": "bold"},
-          "fill": {"value": "black"},
-          "description": {
-            "signal": "\"p_rate: \" + (format(datum[\"p_rate\"], \"\")) + \"; population: \" + (format(datum[\"population\"], \"\")) + \"; state: \" + (isValid(datum[\"state\"]) ? datum[\"state\"] : \"\"+datum[\"state\"])"
-          },
-          "x": {"scale": "x", "field": "p_rate"},
-          "y": {"scale": "y", "field": "population"},
-          "text": {"signal": "isValid(datum[\"state\"]) ? datum[\"state\"] : \"\"+datum[\"state\"]"},
-          "baseline": {"value": "middle"}
+          "x": {"scale": "x", "field": "sum_value rm million_end"},
+          "x2": {"scale": "x", "field": "sum_value rm million_start"},
+          "y": {"scale": "y", "field": "state"},
+          "height": {"signal": "max(0.25, bandwidth('y'))"}
         }
       }
     }
@@ -132,64 +97,60 @@
     {
       "name": "x",
       "type": "linear",
-      "domain": [44, 96],
+      "domain": {
+        "data": "data_0",
+        "fields": ["sum_value rm million_start", "sum_value rm million_end"]
+      },
       "range": [0, {"signal": "width"}],
       "nice": true,
-      "zero": false
+      "zero": true
     },
     {
       "name": "y",
-      "type": "linear",
+      "type": "band",
       "domain": {
-        "fields": [
-          {"data": "data_0", "field": "population"},
-          {"data": "data_1", "field": "population"}
-        ]
+        "data": "source_0",
+        "field": "state",
+        "sort": {
+          "op": "sum",
+          "field": "value rm million",
+          "order": "descending"
+        }
       },
-      "range": [{"signal": "height"}, 0],
-      "nice": true,
-      "zero": true
+      "range": [0, {"signal": "height"}],
+      "paddingInner": 0.1,
+      "paddingOuter": 0.05
     },
     {
       "name": "color",
       "type": "ordinal",
-      "domain": {"data": "data_0", "field": "state", "sort": true},
+      "domain": {
+        "data": "source_0",
+        "field": "kind of economic activity",
+        "sort": {
+          "op": "sum",
+          "field": "value rm million",
+          "order": "descending"
+        }
+      },
       "range": [
-        "#0077BB", "#33BBEE", "#009988", "#EE7733", "#CC3311",
-        "#EE3377", "#4477AA", "#66CCEE", "#228833", "#CCBB44",
-        "#EE6677", "#AA3377", "#88CCEE", "#44AA99", "#117733",
-        "#999933", "#DDCC77", "#CC6677", "#882255", "#AA4499"
+        "#56B4E9", 
+        "#E69F00",  
+        "#009E73",  
+        "#F0E442", 
+        "#0072B2",  
+        "#D55E00",  
+        "#CC79A7"   
       ]
-    },
-    {
-      "name": "size",
-      "type": "sqrt",
-      "domain": {"data": "data_0", "field": "gdp"},
-      "range": [20, 1800],
-      "zero": true
     }
   ],
   "axes": [
     {
       "scale": "x",
       "orient": "bottom",
-      "grid": true,
       "gridScale": "y",
-      "tickCount": {"signal": "ceil(width/40)"},
-      "domain": false,
-      "labels": false,
-      "aria": false,
-      "maxExtent": 0,
-      "minExtent": 0,
-      "ticks": false,
-      "zindex": 0
-    },
-    {
-      "scale": "y",
-      "orient": "left",
       "grid": true,
-      "gridScale": "x",
-      "tickCount": {"signal": "ceil(height/40)"},
+      "tickCount": {"signal": "ceil(width/40)"},
       "domain": false,
       "labels": false,
       "aria": false,
@@ -202,7 +163,7 @@
       "scale": "x",
       "orient": "bottom",
       "grid": false,
-      "title": "Participation Rate (%)",
+      "title": "GDP (RM Million)",
       "labelFlush": true,
       "labelOverlap": true,
       "tickCount": {"signal": "ceil(width/40)"},
@@ -212,43 +173,23 @@
       "scale": "y",
       "orient": "left",
       "grid": false,
-      "title": "Population (thousand)",
-      "labelOverlap": true,
-      "tickCount": {"signal": "ceil(height/40)"},
+      "title": "State",
       "zindex": 0
     }
   ],
   "legends": [
     {
-      "title": "State",
+      "direction": "vertical",
+      "labelLimit": 300,
+      "orient": "right",
+      "title": "Kind of Economic Activity",
       "fill": "color",
-      "symbolType": "circle",
-      "encode": {
-        "symbols": {
-          "update": {"stroke": {"value": "white"}, "opacity": {"value": 0.9}}
-        }
-      }
-    },
-    {
-      "format": ".2s",
-      "title": "GDP (RM million)",
-      "size": "size",
-      "symbolType": "circle",
-      "encode": {
-        "symbols": {
-          "update": {
-            "fill": {"value": "black"},
-            "stroke": {"value": "white"},
-            "fillOpacity": {"value": 0.9},
-            "opacity": {"value": 0.9}
-          }
-        }
-      }
+      "symbolType": "square"
     }
   ],
   "config": {
-    "axis": {"labelFontSize": 11, "titleFontSize": 13},
-    "legend": {"labelFontSize": 11, "titleFontSize": 12},
+    "axis": {"labelFontSize": 11, "titleFontSize": 12},
+    "legend": {"titleFontSize": 12, "labelFontSize": 11},
     "style": {"cell": {"stroke": null}}
   }
 }
